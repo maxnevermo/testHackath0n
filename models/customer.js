@@ -37,6 +37,7 @@ const customerSchema = new mongoose.Schema({
   },
   location: {
     type: String,
+    default: "---",
   },
   tasks: [
     {
