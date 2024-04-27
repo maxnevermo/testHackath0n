@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css" />
+    <script src="signup.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <center>
+      <div class="main-selection-container">
+        <h1>Join as a customer or performer</h1>
+        <div class="selection-container">
+          <div
+            class="signup-selection-container"
+            id="performerContainer"
+            onclick="togglePerformerRadio()"
+          >
+            <input type="radio" id="performerRadio" />
+          </div>
+          <div
+            class="signup-selection-container"
+            onclick="toggleCustomerRadio()"
+            id="customerContainer"
+          >
+            <input type="radio" id="customerRadio" />
+          </div>
+        </div>
+
+        <input
+          class="signup-button"
+          type="button"
+          value="Sign Up"
+          onclick="openSignupForm()"
+        />
+        <p>Already have an accout? <a href="login.html">Log in</a></p>
+      </div>
+      <div class="performer-signup-container">
+        <h2>Performer</h2>
+        <form method="post" action="http://localhost:9000/performer">
+          <input type="submit" />
+        </form>
+      </div>
+      <div class="customer-signup-container">
+        <h2>Customer</h2>
+
+        <form
+          method="post"
+          action="http://localhost:9000/customer"
+          id="customerForm"
+        >
+          <label for="firstname">First Name:</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            required
+          /><br /><br />
+
+          <label for="middlename">Middle Name:</label>
+          <input
+            type="text"
+            id="middlename"
+            name="middlename"
+            required
+          /><br /><br />
+
+          <label for="surname">Surname:</label>
+          <input type="text" id="surname" name="surname" required /><br /><br />
+
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" name="phone" required /><br /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+          /><br /><br />
+
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" /><br /><br />
+
+          <input type="submit" />
+        </form>
+        <p>Already have an accout? <a href="login.html">Log in</a></p>
+      </div>
+    </center>
+  </body>
+  <script>
+    document
+      .getElementById("customerForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        const firstname = document.getElementById("firstname").value;
+        const middlename = document.getElementById("middlename").value;
+        const surname = document.getElementById("surname").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const location = document.getElementById("location").value;
+        const password = document.getElementById("password").value;
+
+        const formData = {
+          firstname: firstname,
+          middlename: middlename,
+          surname: surname,
+          phone: phone,
+          email: email,
+          location: location,
+          password: password,
+        };
+
+        fetch("http://localhost:9000/customer", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error("Form submission failed");
+              throw new Error("Form submission failed");
+            }
+          })
+          .then((userData) => {
+            userData.userType = "customer";
+
+            sessionStorage.setItem("userData", JSON.stringify(userData));
+            window.location.href = "profile.html";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+  </script>
+</html>
