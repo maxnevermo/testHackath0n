@@ -18,6 +18,8 @@ con.on("open", () => {
   console.log("Connected to DB");
 });
 
+app.use(express.static("website"));
+
 const customerRouter = require("./routes/customers");
 app.use("/customer", customerRouter);
 
