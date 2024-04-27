@@ -31,6 +31,10 @@ const performerSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
   category: {
     type: [String],
     required: true,
@@ -46,4 +50,4 @@ const performerSchema = new mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model("Customer", customerSchema);
+module.exports = mongoose.model("Performer", performerSchema);

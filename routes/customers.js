@@ -114,22 +114,6 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const user = await Customer.findOne({ email: email });
-
-    if (!user || password !== user.password) {
-      return res.status(401).json({ error: "Invalid credentials" });
-    }
-
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
-
 module.exports = router;
 
 //POST
