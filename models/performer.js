@@ -35,12 +35,13 @@ const performerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  category: {
+  categories: {
     type: [String],
     required: true,
   },
   location: {
     type: String,
+    default: "---",
   },
   tasks: [
     {

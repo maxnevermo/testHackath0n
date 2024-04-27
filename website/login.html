@@ -4,25 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <form method="post" action="http://localhost:9000/login" id="customerForm">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required /><br /><br />
+    <div>
+      <button id="customerButton">Customer</button>
+      <button id="performerButton">Performer</button>
+      <form method="post" action="/customer/login" id="customerForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br /><br />
 
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        required
-      /><br /><br />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
 
-      <input type="submit" />
-    </form>
-    <p>Dont have an accout? <a href="signup.html">Sign Up</a></p>
+        <input type="submit" />
+      </form>
+
+      <p>Dont have an accout? <a href="signup.html">Sign Up</a></p>
+    </div>
   </body>
   <script>
+    document
+      .getElementById("customerButton")
+      .addEventListener("click", function () {
+        document.getElementById("customerForm").action = "/customer/login";
+      });
+
+    document
+      .getElementById("performerButton")
+      .addEventListener("click", function () {
+        document.getElementById("customerForm").action = "/performer/login";
+      });
+
     document
       .getElementById("customerForm")
       .addEventListener("submit", function (event) {
@@ -37,7 +60,9 @@
         };
         console.log(formData);
 
-        fetch("http://localhost:9000/login", {
+        const formAction = document.getElementById("customerForm").action;
+
+        fetch(formAction, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -53,7 +78,14 @@
             }
           })
           .then((userData) => {
-            userData.userType = "customer";
+            const formAction = document.getElementById("customerForm").action;
+            const trimmedAction = formAction.replace(/^.*\/\/[^\/]+/, "");
+
+            if (trimmedAction == "/customer/login") {
+              userData.userType = "customer";
+            } else {
+              userData.userType = "performer";
+            }
 
             sessionStorage.setItem("userData", JSON.stringify(userData));
             window.location.href = "profile.html";

@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
     <link rel="stylesheet" href="signup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="signup.js"></script>
   </head>
   <body>
@@ -39,9 +46,70 @@
       </div>
       <div class="performer-signup-container">
         <h2>Performer</h2>
-        <form method="post" action="http://localhost:9000/performer">
+        <form
+          method="post"
+          action="http://localhost:9000/performer"
+          id="performerForm"
+        >
+          <label for="firstname">First Name:</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            required
+          /><br /><br />
+
+          <label for="middlename">Middle Name:</label>
+          <input
+            type="text"
+            id="middlename"
+            name="middlename"
+            required
+          /><br /><br />
+
+          <label for="surname">Surname:</label>
+          <input type="text" id="surname" name="surname" required /><br /><br />
+
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" name="phone" required /><br /><br />
+
+          <div id="categories"></div>
+          <input
+            type="button"
+            id="openCategoriesBtn"
+            value="Open Categories"
+          /><br /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+          /><br /><br />
+
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" /><br /><br />
+
           <input type="submit" />
         </form>
+      </div>
+      <div
+        class="categories-container"
+        id="categoriesDropdown"
+        style="display: none"
+      >
+        <select id="mainCategorySelect">
+          <option value="">Select Main Category</option>
+          <!-- Populate main categories here -->
+        </select>
+        <div id="subcategoriesDiv">
+          <!-- Subcategories checkboxes will be populated here -->
+        </div>
+        <button id="addCategoriesBtn">Add Categories</button>
       </div>
       <div class="customer-signup-container">
         <h2>Customer</h2>
@@ -116,7 +184,9 @@
           password: password,
         };
 
-        fetch("http://localhost:9000/customer", {
+        const formAction = document.getElementById("customerForm").action;
+
+        fetch(formAction, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -133,6 +203,74 @@
           })
           .then((userData) => {
             userData.userType = "customer";
+
+            sessionStorage.setItem("userData", JSON.stringify(userData));
+            window.location.href = "profile.html";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+
+    document
+      .getElementById("performerForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        const firstname = document.getElementById("firstname").value;
+        const middlename = document.getElementById("middlename").value;
+        const surname = document.getElementById("surname").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const location = document.getElementById("location").value;
+        const password = document.getElementById("password").value;
+
+        const formData = {
+          firstname: firstname,
+          middlename: middlename,
+          surname: surname,
+          phone: phone,
+          email: email,
+          location: location,
+          password: password,
+          categories: [],
+        };
+
+        const categoriesDiv = document.getElementById("categories");
+        const categoryNames = [];
+
+        for (let i = 0; i < categoriesDiv.children.length; i++) {
+          const child = categoriesDiv.children[i];
+          if (child.classList.contains("category")) {
+            const spanElement = child.querySelector("span");
+            if (spanElement) {
+              categoryNames.push(spanElement.textContent.trim());
+            }
+          }
+        }
+
+        categoryNames.forEach((category) => {
+          formData.categories.push(category);
+        });
+
+        const formAction = document.getElementById("performerForm").action;
+
+        fetch(formAction, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error("Form submission failed");
+              throw new Error("Form submission failed");
+            }
+          })
+          .then((userData) => {
+            userData.userType = "performer";
 
             sessionStorage.setItem("userData", JSON.stringify(userData));
             window.location.href = "profile.html";

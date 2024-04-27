@@ -114,6 +114,21 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    let user = await Customer.findOne({ email: email });
+
+    if (!user || password !== user.password) {
+      return res.status(401).json({ error: "Invalid password" });
+    }
+
+    res.json(user);
+  } catch {
+    res.status(500).json({ error: "User not found" });
+  }
+});
 module.exports = router;
 
 //POST
