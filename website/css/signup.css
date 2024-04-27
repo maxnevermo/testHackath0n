@@ -1,3 +1,6 @@
+body {
+  font-family: Outfit;
+}
 .main-selection-container {
   align-items: center;
   justify-content: center;
@@ -29,6 +32,17 @@
 }
 .performer-signup-container {
   display: none;
+}
+.categories-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  height: 40vh;
+  background-color: #d9d9d9;
+
+  border-radius: 20px;
 }
 
 @media screen and (max-width: 700px) {
