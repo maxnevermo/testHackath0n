@@ -7,6 +7,7 @@ const url =
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 mongoose.connect(url);
 const con = mongoose.connection;

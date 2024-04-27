@@ -31,25 +31,16 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const {
-      firstname,
-      middlename,
-      surname,
-      rating,
-      reviews,
-      phone,
-      email,
-      location,
-    } = req.body;
+    const { firstname, middlename, surname, phone, email, location, password } =
+      req.body;
     const newCustomer = new Customer({
       firstname,
       middlename,
       surname,
-      rating,
-      reviews,
       phone,
       email,
       location,
+      password,
     });
 
     const savedCustomer = await newCustomer.save();
@@ -120,6 +111,22 @@ router.delete("/:id", async (req, res) => {
     res.json({ message: "Customer deleted successfully" });
   } catch (err) {
     res.status(500).send("Error: " + err);
+  }
+});
+
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await Customer.findOne({ email: email });
+
+    if (!user || password !== user.password) {
+      return res.status(401).json({ error: "Invalid credentials" });
+    }
+
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
