@@ -53,5 +53,9 @@ html {
   }
 
   body {
-    font-family: Outfit, sans-serif;
+    font-family: Manrope, sans-serif;
+  }
+  
+  input, input::placeholder {
+    font-family: Manrope;
   }
