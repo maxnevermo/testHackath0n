@@ -135,15 +135,19 @@
           </div>
         </div>
 
-        <div class="messages-container"></div>
+        <div class="messages-container" id="currentChat"></div>
 
         <div class="message-field">
           <input
             type="text"
             class="task-name-input"
             placeholder="Напишіть повідомлення..."
+            id="messageToSend"
           />
-          <button type="button">Send</button>
+          <button
+              type="button"
+              onclick="sendMessage()"
+          >Send</button>
         </div>
       </div>
 
