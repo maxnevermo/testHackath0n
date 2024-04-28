@@ -78,15 +78,17 @@ router.put("/:id", async (req, res) => {
           price: taskData.price,
           category: taskData.category,
           deadline: taskData.deadline,
-          posted: taskData.posted,
           format: taskData.format,
           location: taskData.location || "",
           customer: customer._id,
         });
 
-        const savedTask = await newTask.save();
-
-        customer.tasks.push(savedTask._id);
+        try {
+          const savedTask = await newTask.save();
+          customer.tasks.push(savedTask._id);
+        } catch (error) {
+          console.error(error);
+        }
       }
     }
 
