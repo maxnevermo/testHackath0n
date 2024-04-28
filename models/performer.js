@@ -5,10 +5,6 @@ const performerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  middlename: {
-    type: String,
-    required: true,
-  },
   surname: {
     type: String,
     required: true,

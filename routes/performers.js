@@ -32,19 +32,10 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const {
-      firstname,
-      middlename,
-      surname,
-      phone,
-      email,
-      location,
-      password,
-      categories,
-    } = req.body;
+    const { firstname, surname, phone, email, location, password, categories } =
+      req.body;
     const newPerformer = new Performer({
       firstname,
-      middlename,
       surname,
       phone,
       email,

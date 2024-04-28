@@ -4,18 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
-    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="/css/signup.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
 
-    <script src="signup.js"></script>
+    <script src="/scripts/signup.js"></script>
   </head>
   <body>
-    <header></header>
+    <header>
+      <a class="site-logo" href="./index.html">
+        <img
+          src="./images/logo.png"
+          width="100"
+          height="40"
+          alt="company logo"
+        />
+      </a>
+    </header>
     <center>
       <div class="main-selection-container">
         <h1>Join as a customer or performer</h1>
@@ -26,6 +35,72 @@
             onclick="togglePerformerRadio()"
           >
             <input type="radio" id="performerRadio" />
+
+            <svg
+              viewBox="0 0 400 400"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="performerSVG"
+              width="130"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M147.401 313.003C39.8487 313.003 42.2988 313.003 87.1135 209.526V275.47"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M324.557 227.946C304.429 227.192 195.421 226.265 187.533 234.155C176.154 245.537 148.004 324.113 159.274 339.143C235.863 340.602 293.78 342.161 305.108 337.629C310.954 335.29 315.624 328.565 318.228 322.487C320.29 317.673 341.944 244.299 341.944 242.231"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M155.578 338.466C139.386 332.347 122.408 326.968 106.819 318.962"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M109.285 124.88C83.9951 207.964 197.142 243.153 227.106 159.615C243.349 114.329 188.699 47.6707 132.681 97.7025"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M187.702 157.793C188.738 154.993 189.477 153.351 190.056 150.635"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M164.323 157.307C165.41 155.075 165.59 153.074 166.015 150.55"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <h3 id="performerText">Виконавець</h3>
           </div>
           <div
             class="signup-selection-container"
@@ -33,6 +108,95 @@
             id="customerContainer"
           >
             <input type="radio" id="customerRadio" />
+            <svg
+              viewBox="0 0 400 400"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="customerSVG"
+              width="130"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M215.835 236.523C230.615 231.916 324.859 219.284 329.748 226.618C334.971 234.451 321.015 256.19 317.642 262.938"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M200.43 255.233C193.052 270.139 138.403 369.463 140.997 374.65C184.626 369.677 267.828 372.737 277.473 363.093C283.205 357.361 284.422 345.24 289.029 338.33"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M264.26 253.033C263.823 251.417 265.394 250.388 265.911 249.181"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M83.7379 96.0933C118.308 -5.87526 268.629 41.5108 238.84 147.353C222.69 204.731 112.861 231.738 88.9965 140.507"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M202.97 130.113C202.266 124.677 202.005 121.366 200.834 116.492"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M171.583 131.136C171.322 126.558 170.176 123.198 168.959 118.776"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M305.535 279.447C299.282 280.768 293.481 283.147 288.475 287.151C243.516 323.118 311.573 335.609 332.5 293.755C336.586 285.581 335.535 276.637 330.298 270.092"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M88.9297 248.328C101.082 196.886 176.995 234.502 167.073 274.192C161.18 297.761 139.925 269.243 136.806 259.884"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M137.356 268.919C135.606 293.004 109.681 282.343 100.485 269.469"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <h3 id="customerText">Замовник</h3>
           </div>
         </div>
 
@@ -51,27 +215,30 @@
           action="http://localhost:9000/performer"
           id="performerForm"
         >
-          <label for="firstname">First Name:</label>
-          <input
-            type="text"
-            id="firstname"
-            name="firstname"
-            required
-          /><br /><br />
-
-          <label for="middlename">Middle Name:</label>
-          <input
-            type="text"
-            id="middlename"
-            name="middlename"
-            required
-          /><br /><br />
-
-          <label for="surname">Surname:</label>
-          <input type="text" id="surname" name="surname" required /><br /><br />
-
+          <div class="form-row">
+            <div>
+              <label for="firstname">First Name:</label>
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                required
+              /><br /><br />
+            </div>
+            <div>
+              <label for="surname">Surname:</label>
+              <input
+                type="text"
+                id="surname"
+                name="surname"
+                required
+              /><br /><br />
+            </div>
+          </div>
           <label for="phone">Phone:</label>
           <input type="text" id="phone" name="phone" required /><br /><br />
+
+          <label for="categories">Categories:</label>
 
           <div id="categories"></div>
           <input
@@ -95,6 +262,7 @@
           <input type="text" id="location" name="location" /><br /><br />
 
           <input type="submit" />
+          <p>Already have an accout? <a href="login.html">Log in</a></p>
         </form>
       </div>
       <div
@@ -102,13 +270,17 @@
         id="categoriesDropdown"
         style="display: none"
       >
-        <select id="mainCategorySelect">
-          <option value="">Select Main Category</option>
-          <!-- Populate main categories here -->
-        </select>
-        <div id="subcategoriesDiv">
-          <!-- Subcategories checkboxes will be populated here -->
+        <label id="categoriesText">Оберіть категорії</label>
+        <div class="exit-container" onclick="exitCategories()">
+          <div class="exit-element exit-element-1"></div>
+          <div class="exit-element exit-element-divider"></div>
+          <div class="exit-element exit-element-2"></div>
         </div>
+        <label class="categoriesText">Основна категорія:</label>
+        <select id="mainCategorySelect"></select
+        ><br /><br />
+        <label class="categoriesText">Підкатегорії:</label>
+        <div id="subcategoriesDiv"></div>
         <button id="addCategoriesBtn">Add Categories</button>
       </div>
       <div class="customer-signup-container">
@@ -119,41 +291,68 @@
           action="http://localhost:9000/customer"
           id="customerForm"
         >
-          <label for="firstname">First Name:</label>
-          <input
-            type="text"
-            id="firstname"
-            name="firstname"
-            required
-          /><br /><br />
+          <div class="form-row">
+            <div>
+              <label for="firstname">First Name:</label>
+              <input
+                type="text"
+                id="customer_firstname"
+                name="firstname"
+                required
+                pattern="[A-Za-zА-Яа-яІіЇїЄє]{1,}"
+                title="Ім'я повинне складатись лише з літер алфавіту"
+              />
+            </div>
+            <div>
+              <label for="surname">Surname:</label>
+              <input
+                type="text"
+                id="customer_surname"
+                name="surname"
+                required
+                pattern="[A-Za-zА-Яа-яІіЇїЄє]{1,}"
+                title="Прізвище повинне складатись лише з літер алфавіту"
+              />
+            </div>
+          </div>
 
-          <label for="middlename">Middle Name:</label>
-          <input
-            type="text"
-            id="middlename"
-            name="middlename"
-            required
-          /><br /><br />
-
-          <label for="surname">Surname:</label>
-          <input type="text" id="surname" name="surname" required /><br /><br />
+          <br />
 
           <label for="phone">Phone:</label>
-          <input type="text" id="phone" name="phone" required /><br /><br />
+          <input
+            type="tel"
+            id="customer_phone"
+            name="phone"
+            required
+            pattern="(\+?\d{1,3}\d{9}|\d{10})"
+            title="Ввевідть у форматі +1234567890 або 1234567890"
+          /><br /><br />
 
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required /><br /><br />
+          <input
+            type="email"
+            id="customer_email"
+            name="email"
+            required
+            title="Ввевідть праивльну електронну адресу"
+          /><br /><br />
 
           <label for="password">Password:</label>
           <input
             type="password"
-            id="password"
+            id="customer_password"
             name="password"
             required
+            pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$"
+            title="Пароль мовинен містити щонайменше 8 літер, одну велику літеру та один спецсимвол"
           /><br /><br />
 
           <label for="location">Location:</label>
-          <input type="text" id="location" name="location" /><br /><br />
+          <input
+            type="text"
+            id="customer_location"
+            name="location"
+          /><br /><br />
 
           <input type="submit" />
         </form>
@@ -166,23 +365,23 @@
       .getElementById("customerForm")
       .addEventListener("submit", function (event) {
         event.preventDefault();
-        const firstname = document.getElementById("firstname").value;
-        const middlename = document.getElementById("middlename").value;
-        const surname = document.getElementById("surname").value;
-        const phone = document.getElementById("phone").value;
-        const email = document.getElementById("email").value;
-        const location = document.getElementById("location").value;
-        const password = document.getElementById("password").value;
+
+        const firstname = document.getElementById("customer_firstname").value;
+        const surname = document.getElementById("customer_surname").value;
+        const phone = document.getElementById("customer_phone").value;
+        const email = document.getElementById("customer_email").value;
+        const location = document.getElementById("customer_location").value;
+        const password = document.getElementById("customer_password").value;
 
         const formData = {
           firstname: firstname,
-          middlename: middlename,
           surname: surname,
           phone: phone,
           email: email,
           location: location,
           password: password,
         };
+        console.log(formData);
 
         const formAction = document.getElementById("customerForm").action;
 
@@ -217,7 +416,6 @@
       .addEventListener("submit", function (event) {
         event.preventDefault();
         const firstname = document.getElementById("firstname").value;
-        const middlename = document.getElementById("middlename").value;
         const surname = document.getElementById("surname").value;
         const phone = document.getElementById("phone").value;
         const email = document.getElementById("email").value;
@@ -226,7 +424,6 @@
 
         const formData = {
           firstname: firstname,
-          middlename: middlename,
           surname: surname,
           phone: phone,
           email: email,
