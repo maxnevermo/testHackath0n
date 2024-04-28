@@ -1,0 +1,175 @@
+.container {
+    padding: 15px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container, .site-controls, .site-logo, .auth-button, .sitenav-buttons-container, .account-container, .chat-open-button, .sender-text-info, .chat-list-header, .companion, .details-chat-info-mainlayer, .companion-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-button, .search-option-selector, .site-logo {
+    padding: 13px;
+    border-radius: 24px;
+    border: 1px black solid;
+    font-weight: 600;
+    height: 40px;
+    font-size: 18px;
+}
+
+.site-logo {
+    padding: 13px;
+}
+
+.site-controls {
+    height: 40px;
+}
+
+.task-name-input {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 24px;
+    width: 300px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sitenav-buttons-container > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+.login-button {
+    background-color: #748EFE;
+    color: white;
+}
+
+.task-name-input::placeholder {
+    font-family: Manrope;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/*MAIN CONTAINER*/
+
+.main-container {
+    height: 80vh;
+    padding: 10px 12%;
+    align-items: flex-start;
+}
+
+.customer-info, .ad-header, .ad-filter-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-header {
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.ad-main-info {
+    padding-top: 40px;
+}
+
+.ad-info {
+    text-align: right;
+}
+
+.ad-filter-list {
+    justify-content: flex-start;
+}
+
+.ad-filter-list-item {
+    padding: 4px;
+    color: white;
+    border-radius: 10px;
+    background-color: #8798e4;
+}
+
+.ad-description {
+    padding-top: 30px;
+}
+
+.ad-filter-list > .ad-filter-list-item:not(:last-child) {
+    margin-right: 15px;
+}
+
+.ad-container {
+    width: 100%;
+    height: 90%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    border-radius: 36px;
+    box-shadow:  23px 23px 48px #d7d7d7,
+             -23px -23px 48px #e9e9e9;
+    margin-right: 30px;
+}
+
+.customer-interaction-info {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.send-message > .customer-info {
+    justify-content: flex-start;
+}
+
+.send-message {
+    padding: 40px;
+    background-color: #fafafa;
+    border-radius: 36px;
+    box-shadow:  23px 23px 48px #d7d7d7,
+             -23px -23px 48px #e9e9e9;
+}
+
+.send-message > textarea {
+    margin-top: 15px;
+    border: 1px solid gainsboro;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 20px;
+    resize: none;
+}
+
+.apply-container {
+    font-size: 20px;
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 36px;
+    box-shadow:  23px 23px 48px #d7d7d7,
+             -23px -23px 48px #e9e9e9;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.interaction-button {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 26px;
+    background-color: #7587d8;
+    margin-bottom: 40px;
+}
+
+.send-message > .interaction-button {
+    margin-bottom: 0;
+    margin-top: 20px;
+}

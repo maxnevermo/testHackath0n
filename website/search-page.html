@@ -16,12 +16,7 @@
                 <img src="./images/logo.png" width="80" alt="company logo">
             </a>
     
-            <input type="text" class="task-name-input" id="taskNameInput" placeholder="Пошукати щось..."
-            <svg>
-            <use href></use>
-            </svg>>
-
-
+            <input type="text" class="task-name-input" id="taskNameInput" placeholder="Пошукати щось...">
             <div class="sitenav-buttons-container">
                 <a href="./chats.html" class="auth-button">Повідомлення</a>
                 <a class="account-container" href="./profile.html">
@@ -34,26 +29,32 @@
 
     <section class="container filters-container">
         <div class="filters-container">
-            <label for="categoryFilterSelect">Оберіть категорію:</label>
-            <select name="category-filter-select" id="categoryFilterSelect">
-                <option value="" class="default-choice">Будь-яка категорія</option>
-                <option value="">Ремонт та будівництво</option>
-                <option value="">Догляд за тваринами</option>
-                <option value="">IT та програмування</option>
-                <option value="">Освіта та навчання</option>
-                <option value="">Фото/відео зйомка</option>
-                <option value="">Творчість та розваги</option>
-                <option value="">Домашнє господарство</option>
-                <option value="">Маркетинг та реклама</option>
-                <option value="">Юридичні послуги</option>
-            </select>
+            <label for="categoryFilterSelect">Оберіть категорію:
+                <select name="category-filter-select" class="task-name-input" id="categoryFilterSelect">
+                    <option value="" class="default-choice">Будь-яка категорія</option>
+                    <option value="">Ремонт та будівництво</option>
+                    <option value="">Догляд за тваринами</option>
+                    <option value="">IT та програмування</option>
+                    <option value="">Освіта та навчання</option>
+                    <option value="">Фото/відео зйомка</option>
+                    <option value="">Творчість та розваги</option>
+                    <option value="">Домашнє господарство</option>
+                    <option value="">Маркетинг та реклама</option>
+                    <option value="">Юридичні послуги</option>
+                </select>
+            </label>
 
-            <p>Оберіть формат надання допомоги:</p>
-            <input type="radio" name="format-choice" id="offlineChoice" checked>
-            <input type="radio" name="format-choice" id="onlineChoice">
+            <div class="help-format">
+                <p>Оберіть формат надання допомоги:</p>
+                <input type="radio" name="format-choice" id="offlineChoice" checked>
+                <label for="offlineChoice">Offline</label>
+    
+                <input type="radio" name="format-choice" id="onlineChoice">
+                <label for="offlineChoice">Online</label>
+            </div>
 
-            <label for="regionFilterSelect">Оберіть регіон:</label>
-            <select name="region-select" id="regionFilterSelect">
+            <label for="regionFilterSelect">Оберіть регіон:
+            <select name="region-select" class="task-name-input" id="regionFilterSelect">
                 <option value="">Уся Україна</option>
                 <option value="">АР Крим</option>
                 <option value="">Вінницька область</option>
@@ -81,11 +82,12 @@
                 <option value="">Чернівецька область</option>
                 <option value="">Чернігівська область</option>
             </select>
+        </label>
 
-            <div>
+            <div class="price-container">
                 <p>Ціна</p>
-                <input type="number" id="fromInput" placeholder="від">
-                <input type="number" id="toInput" placeholder="до">
+                <input type="number" id="fromInput" class="task-name-input" placeholder="від">
+                <input type="number" id="toInput" class="task-name-input" placeholder="до">
             </div>
         </div>
     </section>
@@ -94,30 +96,45 @@
         <ul class="advertisement-list">
             <li class="advertisement-list-item">
                 <a href="">
-                    <h2>Назва оголошення</h2>
-                    <p>Категорія оголошення</p>
+                    <div class="ad-info">
+                        <h2>Назва оголошення</h2>
+                        <p>Категорія оголошення</p>
+                        <div class="data-place">
+                            <p class="place">Місце </p>
+                            <p class="date"> - Дата</p>
+                        </div>
+                    </div>
                     <p>Опис оголошення</p>
                     <p>Ціна оголошення</p>
                 </a>
-                <a href="">Плюсик</a>
             </li>
             <li class="advertisement-list-item">
                 <a href="">
-                    <h2>Назва оголошення</h2>
-                    <p>Категорія оголошення</p>
+                    <div class="ad-info">
+                        <h2>Назва оголошення</h2>
+                        <p>Категорія оголошення</p>
+                        <div class="data-place">
+                            <p class="place">Місце </p>
+                            <p class="date"> - Дата</p>
+                        </div>
+                    </div>
                     <p>Опис оголошення</p>
                     <p>Ціна оголошення</p>
                 </a>
-                <a href="">Плюсик</a>
             </li>
             <li class="advertisement-list-item">
                 <a href="">
-                    <h2>Назва оголошення</h2>
-                    <p>Категорія оголошення</p>
+                    <div class="ad-info">
+                        <h2>Назва оголошення</h2>
+                        <p>Категорія оголошення</p>
+                        <div class="data-place">
+                            <p class="place">Місце</p>
+                            <p class="date"> - Дата</p>
+                        </div>
+                    </div>
                     <p>Опис оголошення</p>
                     <p>Ціна оголошення</p>
                 </a>
-                <a href="">Плюсик</a>
             </li>
         </ul>
     </section>
