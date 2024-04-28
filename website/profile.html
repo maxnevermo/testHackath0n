@@ -3,11 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./images/site-icon.svg" type="image/x-icon">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/profile.css" />
+
+    <link
+      rel="shortcut icon"
+      href="./images/site-icon.svg"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Profile</title>
+    <script src="./scripts/profile.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header class="header-container">
+      <div class="container">
+        <a class="site-logo" href="./index.html">
+          <img src="./images/logo.png" width="80" alt="company logo" />
+        </a>
+
+        <input
+          type="text"
+          class="task-name-input"
+          id="taskNameInput"
+          placeholder="Пошукати щось..."
+        />
+
+        <div class="sitenav-buttons-container">
+          <a href="./chats.html" class="auth-button">Повідомлення</a>
+          <a class="account-container" href="./profile.html">
+            <img
+              width="30"
+              src="./images/site-icon.svg"
+              alt="User avatatar"
+              class="user-avatar"
+            />
+            <p class="user-name">User name</p>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="profile-container">
+      <h2>Профіль</h2>
+
+      <div class="row row-container">
+        <div class="row-element firstname">
+          <h3>Ім'я</h3>
+          <p>Anastasiia</p>
+        </div>
+        <div class="row-element surname">
+          <h3>Прізвище</h3>
+          <p>Bodnar</p>
+        </div>
+      </div>
+      <div class="row row-container">
+        <div class="row-element email">
+          <h3>Електронна адреса</h3>
+          <p>anatasiya.bod.21@gmail.com</p>
+        </div>
+        <div class="row-element phone">
+          <h3>Номер телефону</h3>
+          <p>+380934407374</p>
+        </div>
+      </div>
+
+      <div class="row rating-reviews">
+        <h3>Рейтинг та відгуки</h3>
+        <p>4.4 stars 1000 reviews</p>
+      </div>
+      <div class="row categories">
+        <h3>Категорії</h3>
+        <p>C1 C2 C3</p>
+      </div>
+      <div class="row">
+        <h3>Завдання</h3>
+        <div class="tasks-container">
+          <div class="task" data-set-taskId="">
+            <h3>Task name</h3>
+            <p>Description</p>
+            <p>Price</p>
+            <p>Categories:</p>
+            <p>Deadline</p>
+            <p>Performer name</p>
+            <input type="button" value="View Task" class="task-btn" />
+          </div>
+        </div>
+      </div>
+      <div class="row location">
+        <h3>Місце</h3>
+        <p>Lviv</p>
+      </div>
+      <!-- <div class="row">
+        <input
+          type="button"
+          value="Видалити акаунт"
+          id="dlt-btn"
+          onclick="deleteAccount()"
+        />
+      </div> -->
+    </div>
+  </body>
   <script>
-    console.log(sessionStorage.getItem("userData"));
+    var userDataString = sessionStorage.getItem("userData");
+    var userData = JSON.parse(userDataString);
+    console.log(userData);
+    document.querySelector(".user-name").innerHTML =
+      userData.firstname + " " + userData.surname;
+
+    asyncpopulateProfile();
   </script>
 </html>
