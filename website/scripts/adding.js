@@ -128,19 +128,37 @@ function Publish() {
     var Name = document.getElementById('input-name').value;
     var Category = document.getElementById('select-category').value;
     var Price = document.getElementById('input-price').value;
+    var Deadline = document.getElementById('input-deadline').value;
     var Description = document.getElementById('textarea-description').value;
     if (document.getElementById('radiobutton-online').checked) {
         var Format = "online";
+        var Location = "";
     }
-    else {
+    if (document.getElementById('radiobutton-offline').checked) {
         var Format = "offline";
+        var Location = document.getElementById('select-regions').value;
     }
 
-    var ContactPerson = document.getElementById('input-contact-person').value;
-    var Email = document.getElementById('input-email').value;
-    var PhoneNumber = document.getElementById('input-phone-number').value;
+    var CustomerId = "662c06af9cef61f56ccd963b"
 
-    console.log(Name, Category, Price, Description, Format, ContactPerson, Email, PhoneNumber);
+    var task = {
+        "name": Name,
+        "description": Description,
+        "price": parseFloat(Price), // Перетворення ціни на число
+        "category": [Category], // Категорія як масив, якщо є потреба
+        "deadline": Deadline,
+        "format": Format,
+        "location": Location,
+        "customer": CustomerId
+    };
+
+    // Створення об'єкту для відправки на сервер
+    var requestBody = {
+        "tasks": [task]
+    };
+
+    // Виведення об'єкту для перевірки
+    console.log(JSON.stringify(requestBody));
 }
 
 function isNumberKey(evt) {
@@ -152,7 +170,7 @@ function isNumberKey(evt) {
 }
 
 
-function countCharacters() {
+function countCharactersDescription() {
     var textarea = document.getElementById('textarea-description');
     var charCount = document.getElementById('char-count');
     var maxLength = 9000;
@@ -167,5 +185,29 @@ function countCharacters() {
     }
 }
 
+function countCharactersName() {
+    var input = document.getElementById('input-name');
+    var charCount = document.getElementById('char-count-name');
+    var maxLength = 70;
+
+    var currentLength = input.value.length;
+    charCount.textContent = "Кількість символів: " + currentLength + "/" + maxLength;
+
+    // Якщо кількість символів перевищує максимальне значення, обмежуємо текст
+    if (currentLength > maxLength) {
+        input.value = input.value.substring(0, maxLength);
+        charCount.textContent = "Кількість символів: " + maxLength + "/" + maxLength;
+    }
+}
 
 
+
+function showSelectRegions() {
+    document.getElementById('select-regions').style.opacity = "1";
+    document.getElementById('select-regions').style.pointerEvents = "all";
+}
+
+function hideSelectRegions() {
+    document.getElementById('select-regions').style.opacity = "0";
+    document.getElementById('select-regions').style.pointerEvents = "none";
+}
