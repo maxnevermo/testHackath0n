@@ -1,6 +1,4 @@
 const Chatroom = require('../models/chatroom')
-const mongoose = require('mongoose')
-const con = mongoose.connection
 
 const newChatroom = async (req, res) => {
   try {
@@ -51,11 +49,11 @@ const addUserToChatroom = async (chatroomCollection, userCollection, req, res) =
   }
 }
 
-const chatroomByUsername = async (collection, req, res) => {
+const chatroomByUsername = async (chatroomCollection, req, res) => {
   try {
     const userName = req.params.userName;
     console.log(userName);
-    const chatrooms = await collection.find({ members: { $in: [userName] } });
+    const chatrooms = await chatroomCollection.find({ members: { $in: [userName] } });
     if (!chatrooms) {
       return res.json({ status: "error", message: "Chatrooms not found" });
     }
@@ -65,10 +63,10 @@ const chatroomByUsername = async (collection, req, res) => {
     res.json({ status: "error", message: "Internal server error" });
   }
 }
-const chatroomData = async (collection, req, res) => {
+const chatroomData = async (chatroomCollection, req, res) => {
   try {
     const chatroomName = req.params.chatroomName;
-    const chatroom = await collection.findOne({ roomName: chatroomName });
+    const chatroom = await chatroomCollection.findOne({ roomName: chatroomName });
     if (!chatroom) {
       return res.json({ status: "error", message: "Chatroom not found" });
     }
@@ -79,11 +77,11 @@ const chatroomData = async (collection, req, res) => {
   }
 }
 
-const findRoom = async (collection, req, res) => {
+const findRoom = async (chatroomCollection, req, res) => {
   try {
     const { members } = req.body;
 
-    const chatroom = await collection.findOne({ members: { $all: members } });
+    const chatroom = await chatroomCollection.findOne({ members: { $all: members } });
 
     if (chatroom) {
       return res.json({
@@ -115,3 +113,12 @@ const randomChatRoomName = (length) => {
   return result;
 }
 
+
+module.exports = {
+  newChatroom,
+  addUserToChatroom,
+  chatroomByUsername,
+  chatroomData,
+  findRoom,
+  randomChatRoomName
+}
