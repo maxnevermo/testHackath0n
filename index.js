@@ -3,7 +3,45 @@ const mongoose = require("mongoose");
 const Customer = require("./models/customer");
 const Task = require("./models/task");
 const Performer = require("./models/performer");
+const Message = require("./models/message");
+const serverPort = 9000;
+const socketioPort = 3001;
+const io = require('socket.io')(socketioPort);
 
+io.on("connection", (socket) => {
+  console.log("A user connected");
+  console.log(socket.id);
+  socket.on("send-message", (message, room, Userid) => {
+    if (room === "") {
+      socket.broadcast.emit("recive-message", message, Userid, room);
+    } else {
+      socket.to(room).emit("recive-message", message, Userid, room);
+    }
+    socket.broadcast.emit("message-sent");
+    console.log("Message sent");
+    let data = {
+      message: message,
+      room: room,
+      sender: Userid,
+      timestamp: Date.now(),
+    };
+    console.log(data);
+    con.collection("Message").insertOne(data, (err, collection) => {
+      if (err) {
+        throw err;
+      }
+      console.log("Record inserted successfully");
+    });
+  });
+  socket.on("create-room", (room, UserId) => {
+    console.log("Someone created room");
+    socket.broadcast.emit("created-room", room, UserId);
+  });
+  socket.on("join-room", (room, cb) => {
+    socket.join(room);
+    cb("Joined ${room}");
+  });
+});
 //url to connect to cloud db
 const url =
   "mongodb+srv://asiyyyka:Annastasiya04@hotaskbd.fci7s6s.mongodb.net/hotaskDB";
@@ -31,6 +69,6 @@ app.use("/performer", performerRouter);
 
 app.get("/", () => {});
 
-app.listen(9000, () => {
-  console.log("Server is running on port 9000");
+app.listen(serverPort, () => {
+  console.log(`Server is running on port ${serverPort}`);
 });
