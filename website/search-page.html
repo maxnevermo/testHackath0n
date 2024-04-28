@@ -21,7 +21,7 @@
                 <a href="./chats.html" class="auth-button">Повідомлення</a>
                 <a class="account-container" href="./profile.html">
                     <img width="30" src="./images/site-icon.svg" alt="User avatatar" class="user-avatar">
-                    <p class="user-name">User name</p>
+                    <p class="user-name" id="userName">User name</p>
                 </a>
             </div>
         </div>
@@ -29,23 +29,30 @@
 
     <section class="container filters-container">
         <div class="filters-container">
-            <label for="categoryFilterSelect">Оберіть категорію:
+
+            <div class="filter-container-labels">
+                <label for="categoryFilterSelect" class="category-label">Оберіть категорію</label>
+                <p class="format-label">Оберіть формат надання допомоги</p>
+                <label for="regionFilterSelect" class="region-label">Оберіть регіон</label>
+                <p class="price-label">Ціна</p>
+            </div>
+
+            <div class="filters">
                 <select name="category-filter-select" class="task-name-input" id="categoryFilterSelect">
-                    <option value="" class="default-choice">Будь-яка категорія</option>
-                    <option value="">Ремонт та будівництво</option>
-                    <option value="">Догляд за тваринами</option>
-                    <option value="">IT та програмування</option>
-                    <option value="">Освіта та навчання</option>
-                    <option value="">Фото/відео зйомка</option>
-                    <option value="">Творчість та розваги</option>
-                    <option value="">Домашнє господарство</option>
-                    <option value="">Маркетинг та реклама</option>
-                    <option value="">Юридичні послуги</option>
+                    <option value="Будь-яка категорія" class="default-choice">Будь-яка категорія</option>
+                    <option value="Ремонт та будівництво">Ремонт та будівництво</option>
+                    <option selected value="Догляд за тваринами">Догляд за тваринами</option>
+                    <option value="IT та програмування">IT та програмування</option>
+                    <option value="Освіта та навчання">Освіта та навчання</option>
+                    <option value="Фото/відео зйомка">Фото/відео зйомка</option>
+                    <option value="Творчість та розваги">Творчість та розваги</option>
+                    <option value="Домашнє господарство">Домашнє господарство</option>
+                    <option value="Маркетинг та реклама">Маркетинг та реклама</option>
+                    <option value="Юридичні послуги">Юридичні послуги</option>
                 </select>
-            </label>
+
 
             <div class="help-format">
-                <p>Оберіть формат надання допомоги:</p>
                 <input type="radio" name="format-choice" id="offlineChoice" checked>
                 <label for="offlineChoice">Offline</label>
     
@@ -53,90 +60,52 @@
                 <label for="offlineChoice">Online</label>
             </div>
 
-            <label for="regionFilterSelect">Оберіть регіон:
             <select name="region-select" class="task-name-input" id="regionFilterSelect">
-                <option value="">Уся Україна</option>
-                <option value="">АР Крим</option>
-                <option value="">Вінницька область</option>
-                <option value="">Волинська область</option>
-                <option value="">Дніпропетровська область</option>
-                <option value="">Донецька область</option>
-                <option value="">Житомирська область</option>
-                <option value="">Закарпатська область</option>
-                <option value="">Запорізька область</option>
-                <option value="">Івано-Франківська область</option>
-                <option value="">Київська область</option>
-                <option value="">Кіровоградська область</option>
-                <option value="">Луганська область</option>
-                <option value="">Львівська область</option>
-                <option value="">Миколаївська область</option>
-                <option value="">Одеська область</option>
-                <option value="">Полтавська область</option>
-                <option value="">Рівненська область</option>
-                <option value="">Сумська область</option>
-                <option value="">Тернопільська область</option>
-                <option value="">Харківська область</option>
-                <option value="">Херсонська область</option>
-                <option value="">Хмельницька область</option>
-                <option value="">Черкаська область</option>
-                <option value="">Чернівецька область</option>
-                <option value="">Чернігівська область</option>
+                <option value="Уся Україна">Уся Україна</option>
+                <option value="АР Крим">АР Крим</option>
+                <option value="Вінницька область">Вінницька область</option>
+                <option value="Волинська область">Волинська область</option>
+                <option value="Дніпропетровська область">Дніпропетровська область</option>
+                <option value="Донецька область">Донецька область</option>
+                <option value="Житомирська область">Житомирська область</option>
+                <option value="Закарпатська область">Закарпатська область</option>
+                <option value="Запорізька область">Запорізька область</option>
+                <option value="Івано-Франківська область">Івано-Франківська область</option>
+                <option value="Київська область">Київська область</option>
+                <option value="Кіровоградська область">Кіровоградська область</option>
+                <option value="Луганська область">Луганська область</option>
+                <option value="Львівська область">Львівська область</option>
+                <option value="Миколаївська область">Миколаївська область</option>
+                <option value="Одеська область">Одеська область</option>
+                <option value="Полтавська область">Полтавська область</option>
+                <option value="Рівненська область">Рівненська область</option>
+                <option value="Сумська область">Сумська область</option>
+                <option value="Тернопільська область">Тернопільська область</option>
+                <option value="Харківська область">Харківська область</option>
+                <option value="Херсонська область">Херсонська область</option>
+                <option value="Хмельницька область">Хмельницька область</option>
+                <option value="Черкаська область">Черкаська область</option>
+                <option value="Чернівецька область">Чернівецька область</option>
+                <option value="Чернігівська область">Чернігівська область</option>
             </select>
-        </label>
 
             <div class="price-container">
-                <p>Ціна</p>
                 <input type="number" id="fromInput" class="task-name-input" placeholder="від">
                 <input type="number" id="toInput" class="task-name-input" placeholder="до">
+            </div>
             </div>
         </div>
     </section>
 
     <section class="container advertisement-container">
+        <div class="advertisement-container-header">
+            <p>Оголошення</p>
+            <p class="description-header">Опис</p>
+            <p>Ціна</p>
+        </div>
         <ul class="advertisement-list">
-            <li class="advertisement-list-item">
-                <a href="">
-                    <div class="ad-info">
-                        <h2>Назва оголошення</h2>
-                        <p>Категорія оголошення</p>
-                        <div class="data-place">
-                            <p class="place">Місце </p>
-                            <p class="date"> - Дата</p>
-                        </div>
-                    </div>
-                    <p>Опис оголошення</p>
-                    <p>Ціна оголошення</p>
-                </a>
-            </li>
-            <li class="advertisement-list-item">
-                <a href="">
-                    <div class="ad-info">
-                        <h2>Назва оголошення</h2>
-                        <p>Категорія оголошення</p>
-                        <div class="data-place">
-                            <p class="place">Місце </p>
-                            <p class="date"> - Дата</p>
-                        </div>
-                    </div>
-                    <p>Опис оголошення</p>
-                    <p>Ціна оголошення</p>
-                </a>
-            </li>
-            <li class="advertisement-list-item">
-                <a href="">
-                    <div class="ad-info">
-                        <h2>Назва оголошення</h2>
-                        <p>Категорія оголошення</p>
-                        <div class="data-place">
-                            <p class="place">Місце</p>
-                            <p class="date"> - Дата</p>
-                        </div>
-                    </div>
-                    <p>Опис оголошення</p>
-                    <p>Ціна оголошення</p>
-                </a>
-            </li>
         </ul>
     </section>
+    <script src="./scripts/search-page.js"></script>
 </body>
 </html>

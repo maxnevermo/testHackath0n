@@ -75,6 +75,10 @@
     height: 40px;
 }
 
+.filter-label {
+    margin-bottom: 10px;
+}
+
 .task-name-input {
     padding: 8px;
     border: 1px solid black;
@@ -109,6 +113,45 @@
 
 .main-container {
     flex-direction: column;
+}
+
+.filters-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-container-labels, .filters {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.filter-container-labels {
+    font-size: 18px;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+}
+
+.category-label {
+    margin-left: 150px;
+}
+
+.format-label {
+    margin-left: 250px;
+}
+
+.region-label {
+    margin-left: 150px;
+}
+
+.price-label {
+    margin-left: 440px;
+}
+
+.filters > .task-name-input {
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .filters-container.container {
@@ -156,10 +199,11 @@ input::-webkit-inner-spin-button {
 }
 
 .advertisement-list > .advertisement-list-item:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .advertisement-list-item > a {
+    padding: 15px;
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -191,4 +235,23 @@ input::-webkit-inner-spin-button {
 
 #regionFilterSelect, #categoryFilterSelect {
     font-size: 18px;
+}
+
+.advertisement-container {
+    flex-direction: column;
+}
+
+.advertisement-container-header {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 180px;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: 40px;
+}
+
+.description-header {
+    margin-left: 35px;
 }
