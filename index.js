@@ -1,9 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Customer = require("./models/customer");
-const Task = require("./models/task");
-const Performer = require("./models/performer");
-const Message = require("./models/message");
 const serverPort = 9000;
 const socketioPort = 3001;
 const io = require("socket.io")(socketioPort);
@@ -26,7 +22,7 @@ io.on("connection", (socket) => {
       timestamp: Date.now(),
     };
     console.log(data);
-    con.collection("Message").insertOne(data, (err, collection) => {
+    con.collection("Message").insertOne(data, (err) => {
       if (err) {
         throw err;
       }
@@ -67,6 +63,8 @@ app.use("/task", taskRouter);
 const performerRouter = require("./routes/performers");
 app.use("/performer", performerRouter);
 
+const chatRouter = require('./routes/chat')
+app.use('/chat', chatRouter)
 app.get("/", () => {});
 
 app.listen(serverPort, "0.0.0.0", () => {

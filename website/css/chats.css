@@ -192,3 +192,30 @@ h1 {
  .chat-companion-name {
     margin-top: 15px;
  }
+
+.message {
+    width: 50%;
+    background-color: #d5e3e0;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.my-message {
+    align-self: flex-end;
+    background-color: #bfe3db;
+}
+
+.notMessage {
+    align-self: flex-start;
+}
+
+.Sender {
+    font-weight: 500;
+    margin: 0;
+}
+
+.text {
+    margin: 0;
+    padding: 0;
+}
