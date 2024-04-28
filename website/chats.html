@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/chats.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/site-icon.svg"
+      type="image/x-icon"
+    />
+    <title>Chats</title>
+    <script src="./scripts/chats.js"></script>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="container">
+        <a class="site-logo" href="./index.html">
+          <img src="./images/logo.png" width="80" alt="company logo" />
+        </a>
+
+        <div class="site-controls">
+          <input
+            type="text"
+            class="task-name-input"
+            id="taskNameInput"
+            placeholder="Пошукати щось..."
+          />
+
+          <a class="account-container" href="./profile.html">
+            <img
+              width="30"
+              src="./images/site-icon.svg"
+              alt="User avatatar"
+              class="user-avatar"
+            />
+            <p class="user-name">User name</p>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container main-container">
+      <div class="chat-list-container">
+        <h1 class="chat-list-header">Повідомлення</h1>
+        <input class="chat-search-input" type="text" placeholder="Search" />
+        <ul class="chat-list">
+          <li class="chat-list-item">
+            <button type="button" class="chat-open-button">
+              <img
+                src="./images/site-icon.svg"
+                width="50"
+                class="sender-avatar"
+                alt="Sender avatar"
+              />
+              <span class="sender-text-info">
+                <p class="sender-name">Isaak Newton</p>
+                <p class="last-message">
+                  Lorem ipsum dolor sit amet, consectetur.
+                </p>
+              </span>
+            </button>
+          </li>
+          <li class="chat-list-item">
+            <button type="button" class="chat-open-button">
+              <img
+                src="./images/site-icon.svg"
+                width="50"
+                class="sender-avatar"
+                alt="Sender avatar"
+              />
+              <span class="sender-text-info">
+                <p class="sender-name">Isaak Newton</p>
+                <p class="last-message">
+                  Lorem ipsum dolor sit amet, consectetur.
+                </p>
+              </span>
+            </button>
+          </li>
+          <li class="chat-list-item">
+            <button type="button" class="chat-open-button">
+              <img
+                src="./images/site-icon.svg"
+                width="50"
+                class="sender-avatar"
+                alt="Sender avatar"
+              />
+              <span class="sender-text-info">
+                <p class="sender-name">Isaak Newton</p>
+                <p class="last-message">
+                  Lorem ipsum dolor sit amet, consectetur.
+                </p>
+              </span>
+            </button>
+          </li>
+          <li class="chat-list-item">
+            <button type="button" class="chat-open-button">
+              <img
+                src="./images/site-icon.svg"
+                width="50"
+                class="sender-avatar"
+                alt="Sender avatar"
+              />
+              <span class="sender-text-info">
+                <p class="sender-name">Isaak Newton</p>
+                <p class="last-message">
+                  Lorem ipsum dolor sit amet, consectetur.
+                </p>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="specified-chat-container">
+        <div class="specified-chat-header">
+          <div class="companion">
+            <div class="companion-info">
+              <img
+                src="./images/site-icon.svg"
+                class="sender-avatar"
+                width="40"
+                alt="Sender avatar"
+              />
+              <p class="sender-name">Isaak Newton</p>
+            </div>
+            <button type="button">Delete</button>
+          </div>
+        </div>
+
+        <div class="messages-container"></div>
+
+        <div class="message-field">
+          <input
+            type="text"
+            class="task-name-input"
+            placeholder="Напишіть повідомлення..."
+          />
+          <button type="button">Send</button>
+        </div>
+      </div>
+
+      <div class="details-chat-container">
+        <h2 class="details-chat-header">Деталі</h2>
+
+        <div class="details-chat-info">
+          <div class="details-chat-info-mainlayer">
+            <div class="details-text-info">
+              <h3 class="order-title" id="orderTitle">Order title</h3>
+              <p class="order-category" id="orderCategory">Order category</p>
+            </div>
+            <p class="order-price" id="orderPrice">Order price</p>
+          </div>
+          <p class="order-description" id="orderDescription">
+            Order description
+          </p>
+        </div>
+
+        <div class="details-chat-companion">
+          <h3 class="details-chat-companion-header">Chat companion</h3>
+          <p class="chat-companion-name" id="chatCompanionName">
+            Chat companion name
+          </p>
+          <div class="companion-rating">
+            /*ЗАГЛУШКА*/
+            <p>4.99</p>
+          </div>
+          <div class="companion-location">
+            /*ЗАГЛУШКА*/
+            <p class="companion-location" id="companionLocation"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"
+    ></script>
+  </body>
+</html>

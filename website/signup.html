@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="./css/signup.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="./images/site-icon.svg"
+      type="image/x-icon"
+    />
+    <script src="./scripts/signup.js"></script>
+  </head>
+  <body>
+    <header>
+      <a class="site-logo" href="./index.html">
+        <img
+          src="./images/logo.png"
+          width="100"
+          height="40"
+          alt="company logo"
+        />
+      </a>
+    </header>
+    <center>
+      <div class="main-selection-container">
+        <h1>Приєднуйтесь як замовник чи виконавець</h1>
+        <div class="selection-container">
+          <div
+            class="signup-selection-container"
+            id="performerContainer"
+            onclick="togglePerformerRadio()"
+          >
+            <input type="radio" id="performerRadio" />
+
+            <svg
+              viewBox="0 0 400 400"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="performerSVG"
+              width="130"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M147.401 313.003C39.8487 313.003 42.2988 313.003 87.1135 209.526V275.47"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M324.557 227.946C304.429 227.192 195.421 226.265 187.533 234.155C176.154 245.537 148.004 324.113 159.274 339.143C235.863 340.602 293.78 342.161 305.108 337.629C310.954 335.29 315.624 328.565 318.228 322.487C320.29 317.673 341.944 244.299 341.944 242.231"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M155.578 338.466C139.386 332.347 122.408 326.968 106.819 318.962"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M109.285 124.88C83.9951 207.964 197.142 243.153 227.106 159.615C243.349 114.329 188.699 47.6707 132.681 97.7025"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M187.702 157.793C188.738 154.993 189.477 153.351 190.056 150.635"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M164.323 157.307C165.41 155.075 165.59 153.074 166.015 150.55"
+                  stroke="#000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <h3 id="performerText">Виконавець</h3>
+          </div>
+          <div
+            class="signup-selection-container"
+            onclick="toggleCustomerRadio()"
+            id="customerContainer"
+          >
+            <input type="radio" id="customerRadio" />
+            <svg
+              viewBox="0 0 400 400"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="customerSVG"
+              width="130"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M215.835 236.523C230.615 231.916 324.859 219.284 329.748 226.618C334.971 234.451 321.015 256.19 317.642 262.938"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M200.43 255.233C193.052 270.139 138.403 369.463 140.997 374.65C184.626 369.677 267.828 372.737 277.473 363.093C283.205 357.361 284.422 345.24 289.029 338.33"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M264.26 253.033C263.823 251.417 265.394 250.388 265.911 249.181"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M83.7379 96.0933C118.308 -5.87526 268.629 41.5108 238.84 147.353C222.69 204.731 112.861 231.738 88.9965 140.507"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M202.97 130.113C202.266 124.677 202.005 121.366 200.834 116.492"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M171.583 131.136C171.322 126.558 170.176 123.198 168.959 118.776"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M305.535 279.447C299.282 280.768 293.481 283.147 288.475 287.151C243.516 323.118 311.573 335.609 332.5 293.755C336.586 285.581 335.535 276.637 330.298 270.092"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M88.9297 248.328C101.082 196.886 176.995 234.502 167.073 274.192C161.18 297.761 139.925 269.243 136.806 259.884"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M137.356 268.919C135.606 293.004 109.681 282.343 100.485 269.469"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <h3 id="customerText">Замовник</h3>
+          </div>
+        </div>
+
+        <input
+          class="signup-button"
+          type="button"
+          value="Зареєструватись"
+          onclick="openSignupForm()"
+        />
+        <p>Уже маєте акаунт? <a href="login.html">Увійти</a></p>
+      </div>
+      <div class="performer-signup-container">
+        <h2>Зареєструватись як виконавець</h2>
+        <form
+          method="post"
+          action="http://localhost:9000/performer"
+          id="performerForm"
+        >
+          <div class="form-row">
+            <div>
+              <label for="firstname">Ім'я:</label>
+              <input type="text" id="firstname" name="firstname" /><br />
+              <div class="error" id="firstnameError">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  width="20"
+                  style="margin-right: 7px"
+                >
+                  <path
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--icon-color, #9B211B)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                  ></path>
+                  <path
+                    fill="var(--icon-color, #9B211B)"
+                    fill-rule="evenodd"
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--icon-color, #9B211B)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Введіть ім'я</span>
+              </div>
+            </div>
+            <br />
+            <div>
+              <label for="surname">Прізвище:</label>
+              <input type="text" id="surname" name="surname" /><br />
+              <div class="error" id="surnameError">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  width="20"
+                  style="margin-right: 7px"
+                >
+                  <path
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--icon-color, #9B211B)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                  ></path>
+                  <path
+                    fill="var(--icon-color, #9B211B)"
+                    fill-rule="evenodd"
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--icon-color, #9B211B)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Введіть прізвище</span>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div>
+            <label for="phone">Номер телефону:</label>
+            <input type="text" id="phone" name="phone" /><br />
+            <div class="error" id="phoneError">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                role="img"
+                width="20"
+                style="margin-right: 7px"
+              >
+                <path
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                ></path>
+                <path
+                  fill="var(--icon-color, #9B211B)"
+                  fill-rule="evenodd"
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Введіть номер телефону</span>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label for="categories">Категорії:</label>
+            <div id="categories"></div>
+            <div class="error" id="categoriesError">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                role="img"
+                width="20"
+                style="margin-right: 7px"
+              >
+                <path
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                ></path>
+                <path
+                  fill="var(--icon-color, #9B211B)"
+                  fill-rule="evenodd"
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Оберіть хоча б одну категорію</span>
+            </div>
+            <input
+              type="button"
+              id="openCategoriesBtn"
+              value="Обрати категорії"
+            /><br />
+          </div>
+          <br />
+          <div>
+            <label for="email">Електронна адреса:</label>
+            <input type="text" id="email" name="email" /><br />
+            <div class="error" id="emailError">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                role="img"
+                width="20"
+                style="margin-right: 7px"
+              >
+                <path
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                ></path>
+                <path
+                  fill="var(--icon-color, #9B211B)"
+                  fill-rule="evenodd"
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Введіть електронну адресу</span>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" /><br />
+            <div class="error" id="passwordError">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                role="img"
+                width="20"
+                style="margin-right: 7px"
+              >
+                <path
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                ></path>
+                <path
+                  fill="var(--icon-color, #9B211B)"
+                  fill-rule="evenodd"
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Введіть пароль</span>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label for="regionFilterSelect">Область: (не обов'язково)</label>
+            <select name="region-select" id="regionFilterSelect">
+              <option value="">Уся Україна</option>
+              <option value="АР Крим">Крим</option>
+              <option value="Вінницька">Вінницька</option>
+              <option value="Волинська">Волинська</option>
+              <option value="Дніпропетровська">Дніпропетровська</option>
+              <option value="Донецька">Донецька</option>
+              <option value="Житомирська">Житомирська</option>
+              <option value="Закарпатська">Закарпатська</option>
+              <option value="Запорізька">Запорізька</option>
+              <option value="Івано-Франківська">Івано-Франківська</option>
+              <option value="Київська">Київська</option>
+              <option value="Кіровоградська">Кіровоградська</option>
+              <option value="Луганська">Луганська</option>
+              <option value="Львівська">Львівська</option>
+              <option value="Миколаївська">Миколаївська</option>
+              <option value="Одеська">Одеська</option>
+              <option value="Полтавська">Полтавська</option>
+              <option value="Рівненська">Рівненська</option>
+              <option value="Сумська">Сумська</option>
+              <option value="Тернопільська">Тернопільська</option>
+              <option value="Харківська">Харківська</option>
+              <option value="Херсонська">Херсонська</option>
+              <option value="Хмельницька">Хмельницька</option>
+              <option value="Черкаська">Черкаська</option>
+              <option value="Чернівецька">Чернівецька</option>
+              <option value="Чернігівська">Чернігівська</option>
+            </select>
+          </div>
+
+          <input type="submit" value="Зареєструватись" />
+          <p>Уже маєте акаунт? <a href="login.html">Увійти</a></p>
+        </form>
+      </div>
+      <div
+        class="categories-container"
+        id="categoriesDropdown"
+        style="display: none"
+      >
+        <label id="categoriesText">Оберіть категорії</label>
+        <div class="exit-container" onclick="exitCategories()">
+          <div class="exit-element exit-element-1"></div>
+          <div class="exit-element exit-element-divider"></div>
+          <div class="exit-element exit-element-2"></div>
+        </div>
+        <label class="categoriesText">Основна категорія:</label>
+        <select id="mainCategorySelect"></select
+        ><br /><br />
+        <label class="categoriesText">Підкатегорії:</label>
+        <div id="subcategoriesDiv"></div>
+        <button id="addCategoriesBtn">Add Categories</button>
+      </div>
+      <div class="customer-signup-container">
+        <h2>Зареєструватись як замовник</h2>
+
+        <form
+          method="post"
+          action="http://localhost:9000/customer"
+          id="customerForm"
+        >
+          <div class="form-row">
+            <div>
+              <label for="firstname">Ім'я:</label>
+              <input
+                type="text"
+                id="customer_firstname"
+                name="firstname"
+              /><br />
+              <div class="error" id="customer_firstnameError">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  width="20"
+                  style="margin-right: 7px"
+                >
+                  <path
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--icon-color, #9B211B)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                  ></path>
+                  <path
+                    fill="var(--icon-color, #9B211B)"
+                    fill-rule="evenodd"
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--icon-color, #9B211B)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Введіть ім'я</span>
+              </div>
+            </div>
+            <br />
+            <div>
+              <label for="surname">Прізвище:</label>
+              <input type="text" id="customer_surname" name="surname" /><br />
+              <div class="error" id="customer_surnameError">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  width="20"
+                  style="margin-right: 7px"
+                >
+                  <path
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--icon-color, #9B211B)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                  ></path>
+                  <path
+                    fill="var(--icon-color, #9B211B)"
+                    fill-rule="evenodd"
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--icon-color, #9B211B)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Введіть прізвище</span>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div>
+            <label for="phone">Номер телефону:</label>
+            <input type="text" id="customer_phone" name="phone" /><br />
+            <div class="error" id="customer_phoneError">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                role="img"
+                width="20"
+                style="margin-right: 7px"
+              >
+                <path
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                ></path>
+                <path
+                  fill="var(--icon-color, #9B211B)"
+                  fill-rule="evenodd"
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Введіть номер телефону</span>
+            </div>
+          </div>
+          <br />
+
+          <div>
+            <label for="email">Електронна адреса:</label>
+            <input type="text" id="customer_email" name="email" /><br />
+            <div class="error" id="customer_emailError">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                role="img"
+                width="20"
+                style="margin-right: 7px"
+              >
+                <path
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                ></path>
+                <path
+                  fill="var(--icon-color, #9B211B)"
+                  fill-rule="evenodd"
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Введіть електронну адресу</span>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label for="password">Пароль:</label>
+            <input
+              type="password"
+              id="customer_password"
+              name="password"
+            /><br />
+            <div class="error" id="customer_passwordError">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                role="img"
+                width="20"
+                style="margin-right: 7px"
+              >
+                <path
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+                ></path>
+                <path
+                  fill="var(--icon-color, #9B211B)"
+                  fill-rule="evenodd"
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #9B211B)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Введіть пароль</span>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label for="regionFilterSelect">Область: (не обов'язково)</label>
+            <select name="region-select" id="customer_regionFilterSelect">
+              <option value="">Уся Україна</option>
+              <option value="АР Крим">Крим</option>
+              <option value="Вінницька">Вінницька</option>
+              <option value="Волинська">Волинська</option>
+              <option value="Дніпропетровська">Дніпропетровська</option>
+              <option value="Донецька">Донецька</option>
+              <option value="Житомирська">Житомирська</option>
+              <option value="Закарпатська">Закарпатська</option>
+              <option value="Запорізька">Запорізька</option>
+              <option value="Івано-Франківська">Івано-Франківська</option>
+              <option value="Київська">Київська</option>
+              <option value="Кіровоградська">Кіровоградська</option>
+              <option value="Луганська">Луганська</option>
+              <option value="Львівська">Львівська</option>
+              <option value="Миколаївська">Миколаївська</option>
+              <option value="Одеська">Одеська</option>
+              <option value="Полтавська">Полтавська</option>
+              <option value="Рівненська">Рівненська</option>
+              <option value="Сумська">Сумська</option>
+              <option value="Тернопільська">Тернопільська</option>
+              <option value="Харківська">Харківська</option>
+              <option value="Херсонська">Херсонська</option>
+              <option value="Хмельницька">Хмельницька</option>
+              <option value="Черкаська">Черкаська</option>
+              <option value="Чернівецька">Чернівецька</option>
+              <option value="Чернігівська">Чернігівська</option>
+            </select>
+          </div>
+
+          <input type="submit" value="Зареєструватись" />
+          <p>Уже маєте акаунт? <a href="login.html">Увійти</a></p>
+        </form>
+      </div>
+      <div id="account-exists-container">
+        <div class="exit-container" onclick="closeExistingAccount()">
+          <div class="exit-element exit-element-1"></div>
+          <div class="exit-element exit-element-divider"></div>
+          <div class="exit-element exit-element-2"></div>
+        </div>
+        <h2 id="error-account-container-text">Помилка</h2>
+        <div class="error-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            role="img"
+            width="60"
+            style="margin-right: 7px"
+          >
+            <path
+              vector-effect="non-scaling-stroke"
+              stroke="var(--icon-color, #9B211B)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+            ></path>
+            <path
+              fill="var(--icon-color, #9B211B)"
+              fill-rule="evenodd"
+              vector-effect="non-scaling-stroke"
+              stroke="var(--icon-color, #9B211B)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <p>
+            Користувач з такою електронною адресою чи номером телефону уже існує
+          </p>
+        </div>
+        <p>Це ви? <a href="login.html">Увійти</a></p>
+        <input
+          type="button"
+          value="Ok"
+          id="ok-button"
+          onclick="closeExistingAccount()"
+        />
+      </div>
+    </center>
+  </body>
+  <script>
+    document
+      .getElementById("customerForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var errorsDiv = document.querySelectorAll(".error");
+        errorsDiv.forEach(function (error) {
+          error.style.display = "none";
+        });
+
+        const firstnameDiv = document.getElementById("customer_firstname");
+        const surnameDiv = document.getElementById("customer_surname");
+        const phoneDiv = document.getElementById("customer_phone");
+        const emailDiv = document.getElementById("customer_email");
+        const passwordDiv = document.getElementById("customer_password");
+
+        const firstname = firstnameDiv.value.trim();
+        const surname = surnameDiv.value.trim();
+        const phone = phoneDiv.value.trim();
+        const email = emailDiv.value.trim();
+        const password = passwordDiv.value.trim();
+
+        var isValid = true;
+
+        if (firstname === "") {
+          document.getElementById("customer_firstnameError").style.display =
+            "flex";
+          firstnameDiv.style.border = "2px solid #9b211b";
+          isValid = false;
+        } else {
+          if (!/^[A-Za-zА-Яа-яІіЇїЄє]+$/.test(firstname)) {
+            var firstnameError = document.getElementById(
+              "customer_firstnameError"
+            );
+            firstnameError.querySelector("span").innerText =
+              "Ім'я лише з літер алфавіту";
+            firstnameDiv.style.border = "2px solid #9b211b";
+
+            firstnameError.style.display = "flex";
+            isValid = false;
+          } else {
+            firstnameDiv.style.border = "0.5px solid #333333";
+          }
+        }
+
+        if (surname === "") {
+          document.getElementById("customer_surnameError").style.display =
+            "flex";
+          surnameDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          if (!/^[A-Za-zА-Яа-яІіЇїЄє]+$/.test(surname)) {
+            var surnameError = document.getElementById("customer_surnameError");
+
+            surnameError.querySelector("span").innerText =
+              "Прізвище лише з літер алфавіту";
+            surnameDiv.style.border = "2px solid #9b211b";
+
+            surnameError.style.display = "flex";
+            isValid = false;
+          } else {
+            surnameDiv.style.border = "0.5px solid #333333";
+          }
+        }
+
+        if (phone === "") {
+          document.getElementById("customer_phoneError").style.display = "flex";
+          phoneDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          if (!/^\+?\d{10,}$/i.test(phone)) {
+            const phoneError = document.getElementById("customer_phoneError");
+            phoneError.querySelector("span").innerText =
+              "Некоректний формат номеру телефону";
+            phoneDiv.style.border = "2px solid #9b211b";
+
+            phoneError.style.display = "flex";
+            isValid = false;
+          } else {
+            phoneDiv.style.border = "0.5px solid #333333";
+          }
+        }
+        if (email === "") {
+          document.getElementById("customer_emailError").style.display = "flex";
+          emailDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+            const emailError = document.getElementById("customer_emailError");
+            emailError.querySelector("span").innerText =
+              "Некоректний формат електронної пошти";
+            emailDiv.style.border = "2px solid #9b211b";
+
+            emailError.style.display = "flex";
+            isValid = false;
+          } else {
+            emailDiv.style.border = "0.5px solid #333333";
+          }
+        }
+
+        if (password === "") {
+          document.getElementById("customer_passwordError").style.display =
+            "flex";
+          passwordDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          if (password.length < 8) {
+            const passwordError = document.getElementById(
+              "customer_passwordError"
+            );
+            passwordError.querySelector("span").innerText =
+              "Пароль повинен містити принаймні 8 символів";
+            passwordDiv.style.border = "2px solid #9b211b";
+
+            passwordError.style.display = "flex";
+            isValid = false;
+          } else {
+            passwordDiv.style.border = "0.5px solid #333333";
+          }
+        }
+
+        if (!isValid) {
+          return;
+        }
+
+        const location = document.getElementById(
+          "customer_regionFilterSelect"
+        ).value;
+
+        const formData = {
+          firstname: firstname,
+          surname: surname,
+          phone: phone,
+          email: email,
+          location: location,
+          password: password,
+        };
+        console.log(formData);
+
+        const formAction = document.getElementById("customerForm").action;
+
+        fetch(formAction, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.error("Form submission failed");
+              openExistingAccount();
+              throw new Error("Form submission failed");
+            }
+          })
+          .then((userData) => {
+            userData.userType = "customer";
+
+            sessionStorage.setItem("userData", JSON.stringify(userData));
+            window.location.href = "profile.html";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+
+    document
+      .getElementById("performerForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        var errorsDiv = document.querySelectorAll(".error");
+        errorsDiv.forEach(function (error) {
+          error.style.display = "none";
+        });
+
+        const firstnameDiv = document.getElementById("firstname");
+        const surnameDiv = document.getElementById("surname");
+        const phoneDiv = document.getElementById("phone");
+        const emailDiv = document.getElementById("email");
+        const passwordDiv = document.getElementById("password");
+        const categoriesDiv = document.getElementById("categories");
+
+        const firstname = firstnameDiv.value.trim();
+        const surname = surnameDiv.value.trim();
+        const phone = phoneDiv.value.trim();
+        const email = emailDiv.value.trim();
+        const password = passwordDiv.value.trim();
+
+        var isValid = true;
+
+        if (firstname === "") {
+          document.getElementById("firstnameError").style.display = "flex";
+          firstnameDiv.style.border = "2px solid #9b211b";
+          isValid = false;
+        } else {
+          if (!/^[A-Za-zА-Яа-яІіЇїЄє]+$/.test(firstname)) {
+            var firstnameError = document.getElementById("firstnameError");
+            firstnameError.querySelector("span").innerText =
+              "Ім'я лише з літер алфавіту";
+            firstnameDiv.style.border = "2px solid #9b211b";
+
+            firstnameError.style.display = "flex";
+            isValid = false;
+          } else {
+            firstnameDiv.style.border = "0.5px solid #333333";
+          }
+        }
+
+        if (surname === "") {
+          document.getElementById("surnameError").style.display = "flex";
+          surnameDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          if (!/^[A-Za-zА-Яа-яІіЇїЄє]+$/.test(surname)) {
+            var surnameError = document.getElementById("surnameError");
+
+            surnameError.querySelector("span").innerText =
+              "Прізвище лише з літер алфавіту";
+            surnameDiv.style.border = "2px solid #9b211b";
+
+            surnameError.style.display = "flex";
+            isValid = false;
+          } else {
+            surnameDiv.style.border = "0.5px solid #333333";
+          }
+        }
+        if (categoriesDiv.children.length <= 0) {
+          document.getElementById("categoriesError").style.display = "flex";
+          categoriesDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          categoriesDiv.style.border = "0.5px solid #333333";
+        }
+        if (phone === "") {
+          document.getElementById("phoneError").style.display = "flex";
+          phoneDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          if (!/^\+?\d{10,}$/i.test(phone)) {
+            const phoneError = document.getElementById("phoneError");
+            phoneError.querySelector("span").innerText =
+              "Некоректний формат номеру телефону";
+            phoneDiv.style.border = "2px solid #9b211b";
+
+            phoneError.style.display = "flex";
+            isValid = false;
+          } else {
+            phoneDiv.style.border = "0.5px solid #333333";
+          }
+        }
+        if (email === "") {
+          document.getElementById("emailError").style.display = "flex";
+          emailDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+            const emailError = document.getElementById("emailError");
+            emailError.querySelector("span").innerText =
+              "Некоректний формат електронної пошти";
+            emailDiv.style.border = "2px solid #9b211b";
+
+            emailError.style.display = "flex";
+            isValid = false;
+          } else {
+            emailDiv.style.border = "0.5px solid #333333";
+          }
+        }
+
+        if (password === "") {
+          document.getElementById("passwordError").style.display = "flex";
+          passwordDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          if (password.length < 8) {
+            const passwordError = document.getElementById("passwordError");
+            passwordError.querySelector("span").innerText =
+              "Пароль повинен містити принаймні 8 символів";
+            passwordDiv.style.border = "2px solid #9b211b";
+
+            passwordError.style.display = "flex";
+            isValid = false;
+          } else {
+            passwordDiv.style.border = "0.5px solid #333333";
+          }
+        }
+
+        if (!isValid) {
+          return;
+        }
+
+        const location = document.getElementById("regionFilterSelect").value;
+
+        const formData = {
+          firstname: firstname,
+          surname: surname,
+          phone: phone,
+          email: email,
+          location: location,
+          password: password,
+          categories: [],
+        };
+
+        const categoryNames = [];
+
+        for (let i = 0; i < categoriesDiv.children.length; i++) {
+          const child = categoriesDiv.children[i];
+          if (child.classList.contains("category")) {
+            const spanElement = child.querySelector("span");
+            if (spanElement) {
+              categoryNames.push(spanElement.textContent.trim());
+            }
+          }
+        }
+
+        categoryNames.forEach((category) => {
+          formData.categories.push(category);
+        });
+
+        const formAction = document.getElementById("performerForm").action;
+
+        fetch(formAction, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              openExistingAccount();
+
+              console.error("Form submission failed");
+
+              throw new Error("Form submission failed");
+            }
+          })
+          .then((userData) => {
+            userData.userType = "performer";
+
+            sessionStorage.setItem("userData", JSON.stringify(userData));
+            window.location.href = "profile.html";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+  </script>
+</html>

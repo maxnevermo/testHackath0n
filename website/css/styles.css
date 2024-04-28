@@ -1,0 +1,326 @@
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+/* Вказуємо box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Видаляємо зовнішні відступи для різних елементів */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Встановлюємо основні параметри для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: Manrope, serif;
+}
+
+/* Видаляємо стандартну стилізацію для всіх списків з класами*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Зберігаємо налаштування для елементів a, якщо вони не мають класу */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Встановлюємо максимальну ширину для зображень */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/*Наслідуємо шрифти для вводу, кнопок та textarea */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Видаляємо анімації та переходи для користувачів, які не хочуть їх використовувати */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.header-container {
+    padding: 15px;
+}
+
+.nav-container{
+    margin-top: 20px;
+    margin-bottom: 5%;
+}
+
+.nav-category-list{
+    display: flex;
+    gap: 20px;
+
+}
+
+.nav-category-list a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-category-list a:hover {
+    border-bottom: 1px solid forestgreen;
+    color: forestgreen;
+}
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container, .site-controls, .site-logo, .auth-button, .auth-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-container {
+    flex-direction: column;
+}
+
+.auth-button, .search-option-selector, .site-logo {
+    padding: 13px;
+    border-radius: 24px;
+    border: 1px black solid;
+    height: 50px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.site-logo {
+    padding: 13px;
+}
+
+.task-name-input {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 24px;
+    width: 300px;
+    margin-right: 30px;
+    height: 50px;
+}
+
+.auth-buttons-container > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+.login-button {
+    background-color: #748EFE;
+    color: white;
+}
+
+.task-name-input::placeholder {
+    font-family: Manrope;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+
+.main-container{
+
+    /*вміст*/
+    padding: 0 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main-container-block{
+    background: #e1e1e1;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+
+
+    overflow: hidden;
+    padding: 5%;
+}
+
+.info-item{
+    display: flex;
+    gap: 10px;
+}
+
+.main-container-block-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 50%;
+    justify-content: space-between;
+}
+
+.block-img{
+    border-radius: 30px;
+}
+
+
+.button{
+    /*border: 1px solid black;*/
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+
+    border-radius: 30px;
+    text-decoration: none;
+    background: forestgreen;
+    color: white;
+}
+
+.button:hover{
+    background: #28a528;
+}
+
+.site-main-idea{
+    font-size: 60px;
+}
+
+.site-main-idea-description{
+    font-size: 25px;
+}
+
+.block-idea{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.info-item-idea{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.block-img-container{
+    display: flex;
+    align-items: center;
+    max-width: 45%;
+}
+
+
+.footer-container {
+    background-color: #575757;
+    color: #fefefe;
+    width: 100%;
+    padding: 20px 5%;
+    margin-top: 5%;
+}
+
+.footer-container a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-list-name{
+    font-size: 18px;
+}
+
+.footer-container a:hover{
+    border-bottom: 1px solid darkred;
+}
+
+.footer-container h5{
+    padding: 0;
+    margin: 0;
+}
+
+.footer-content{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.footer-list{
+    display: flex;
+    gap: 20px;
+    padding-top: 15px;
+    padding-left: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-team-name{
+    margin-bottom: 40px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.footer-details{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-container hr{
+    margin: 40px 0;
+}
+
+
+@media (max-width: 767px) {
+    .footer .content {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+    }
+
+    .footer {
+        position: unset;
+    }
+}
+
+
+@media (max-width: 1300px){
+    .main-container-block{
+        flex-direction: column;
+        gap: 50px;
+        padding: 10%;
+    }
+    .block-img-container{
+        max-width: 100%;
+        justify-content: center;
+    }
+    .main-container-block-info{
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+

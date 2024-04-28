@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link rel="stylesheet" href="/css/login.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./images/site-icon.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <a class="site-logo" href="./index.html">
+        <img
+          src="./images/logo.png"
+          width="100"
+          height="40"
+          alt="company logo"
+        />
+      </a>
+    </header>
+
+    <div class="form-container">
+      <div class="choice-buttons-container">
+        <button id="customerButton" class="login-choice-button active-button">
+          Замовник
+        </button>
+        <button
+          id="performerButton"
+          class="login-choice-button inactive-button"
+        >
+          Виконавець
+        </button>
+      </div>
+      <form method="post" action="/customer/login" id="loginForm">
+        <div class="design-div">
+          <div class="first-rec"></div>
+          <div class="sec-rec"></div>
+        </div>
+        <div class="row-form-container">
+          <label for="email">Електронна адреса</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="row-form-container">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <input type="submit" value="Увійти" />
+        <p class="reg-hint">Не маєте акаунту?</p>
+        <input
+          class="inverted-button auth-button"
+          type="button"
+          value="Зареєструватись"
+          onclick="window.location.href = 'signup.html';"
+        />
+      </form>
+    </div>
+  </body>
+  <script>
+    document
+      .getElementById("customerButton")
+      .addEventListener("click", function () {
+        document.getElementById("loginForm").action = "/customer/login";
+      });
+
+    document
+      .getElementById("performerButton")
+      .addEventListener("click", function () {
+        document.getElementById("loginForm").action = "/performer/login";
+      });
+
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const formData = {
+          email: email,
+          password: password,
+        };
+        console.log(formData);
+
+        const formAction = document.getElementById("loginForm").action;
+
+        fetch(formAction, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              console.log("Inccorect data");
+              throw new Error("Inccorect data");
+            }
+          })
+          .then((userData) => {
+            const formAction = document.getElementById("loginForm").action;
+            const trimmedAction = formAction.replace(/^.*\/\/[^\/]+/, "");
+
+            if (trimmedAction == "/customer/login") {
+              userData.userType = "customer";
+            } else {
+              userData.userType = "performer";
+            }
+
+            sessionStorage.setItem("userData", JSON.stringify(userData));
+            window.location.href = "profile.html";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+  </script>
+  <script src="./scripts/login.js"></script>
+</html>
