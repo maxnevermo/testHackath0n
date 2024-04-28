@@ -28,6 +28,26 @@ function getTaskDetails(taskId) {
     });
 }
 
+function getPerformerData(performerId) {
+  return fetch(`/performer/${performerId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log("Incorrect data");
+        throw new Error("Incorrect data");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
 function populateTask(taskData) {
   const orderTitleElement = document.getElementById("orderTitle");
   const orderCategoryElement = document.getElementById("orderCategory");

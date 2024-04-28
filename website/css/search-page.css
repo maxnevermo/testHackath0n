@@ -45,6 +45,53 @@
 .login-button {
     background-color: #748EFE;
     color: white;
+}.container {
+    padding: 15px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container, .site-controls, .site-logo, .auth-button, .sitenav-buttons-container, .account-container, .chat-open-button, .sender-text-info, .chat-list-header, .companion, .details-chat-info-mainlayer, .companion-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-button, .search-option-selector, .site-logo {
+    padding: 13px;
+    border-radius: 24px;
+    border: 1px black solid;
+    font-weight: 600;
+    height: 40px;
+    font-size: 18px;
+}
+
+.site-logo {
+    padding: 13px;
+}
+
+.site-controls {
+    height: 40px;
+}
+
+.task-name-input {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 24px;
+    width: 300px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sitenav-buttons-container > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+.login-button {
+    background-color: #748EFE;
+    color: white;
 }
 
 .task-name-input::placeholder {
@@ -58,10 +105,90 @@
     margin-right: 5px;
 }
 
-.container {
-    outline: 1px solid tomato;
+/*MAIN CONTAINER*/
+
+.main-container {
+    flex-direction: column;
+}
+
+.filters-container.container {
+    padding-top: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid gainsboro;
+}
+
+.filters-container, .filters-container > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters-container > label {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.filters-container > *:not(:last-child) {
+    margin-right: 25px;
+}
+
+.search-filter-select {
+    padding: 8px;
+    border-radius: 24px;
+    border: 1px black solid;
+    font-size: 18px;
+}
+
+.data-place {
+    display: flex;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+}
+
+.price-container > .task-name-input {
+    width: auto;
+}
+.advertisement-list, .advertisement-list-item.container {
+    width: 100%;
+}
+
+.advertisement-list > .advertisement-list-item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.advertisement-list-item > a {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.advertisement-list-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-name-input::placeholder {
+    font-family: Manrope;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 .main-container {
     flex-direction: column;
+}
+
+.price-container > .task-name-input {
+    width: auto;
+}
+
+#regionFilterSelect, #categoryFilterSelect {
+    font-size: 18px;
 }

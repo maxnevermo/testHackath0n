@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/ad-page.css">
+    <link rel="shortcut icon" href="./images/site-icon.svg" type="image/x-icon">
+    <title>Назва оголошення</title>
+</head>
+<body>
+    <header class="header-container">
+        <div class="container">
+            <a class="site-logo" href="./index.html">
+                <img src="./images/logo.png" width="80" alt="company logo">
+            </a>
+    
+            <input type="text" class="task-name-input" id="taskNameInput" placeholder="Пошукати щось...">
+
+            <div class="sitenav-buttons-container">
+                <a href="./chats.html" class="auth-button">Повідомлення</a>
+                <a class="account-container" href="./profile.html">
+                    <img width="30" src="./images/site-icon.svg" alt="User avatatar" class="user-avatar">
+                    <p class="user-name">User name</p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container container">
+        <div class="ad-container">
+            <div class="ad-header">
+
+            <div class="customer-info">
+                <img width="60" src="./images/customer.svg" alt="">
+                <p>Isaak Newton</p>
+            </div>
+
+            <div class="ad-info">
+                <p>Опубліковано 1 годину тому</p>
+                <p>Ціна</p>
+            </div>
+            </div>
+
+            <div class="ad-main-info">
+                <h1>Назва оголошення</h1>
+                <ul class="ad-filter-list">
+                    <li class="ad-filter-list-item">Категорія</li>
+                    <li class="ad-filter-list-item">Дедлайн</li>
+                    <li class="ad-filter-list-item">Формат</li>
+                </ul>
+                <p class="ad-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugit, provident nisi molestias sint consequatur ratione quis, dignissimos laudantium, sed harum inventore. Iure enim natus facilis temporibus earum, doloribus ducimus?</p>
+            </div>
+        </div>
+
+        <div class="customer-interaction-info">
+                <button type="button" class="interaction-button">Надіслати заявку</button>
+
+                <div class="send-message">
+                    <div class="customer-info">
+                        <img width="60" src="./images/customer.svg" alt="">
+                        <p>Isaak Newton</p>
+                    </div>
+                    <textarea name="message-input" id="messageInput" cols="22" rows="4"></textarea>
+
+                    <button type="button" class="interaction-button">Почати розмову</button>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
