@@ -34,7 +34,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    font-family: Manrope, serif;
+    font-family: Manrope, sans-serif;
 }
 
 /* Видаляємо стандартну стилізацію для всіх списків з класами*/
@@ -77,26 +77,27 @@ select {
     padding: 15px;
 }
 
-.nav-container{
+.nav-container {
     margin-top: 20px;
     margin-bottom: 5%;
+    padding: 0 5%;
 }
 
-.nav-category-list{
+.nav-category-list {
     display: flex;
     gap: 20px;
 
 }
 
-.nav-category-list a{
+.nav-category-list a {
     font-size: 20px;
     text-decoration: none;
     color: black;
 }
 
 .nav-category-list a:hover {
-    border-bottom: 1px solid forestgreen;
-    color: forestgreen;
+    border-bottom: 1px solid #748EFE;
+    color: #748EFE;
 }
 
 .container {
@@ -153,7 +154,7 @@ select {
 }
 
 
-.main-container{
+.main-container {
 
     /*вміст*/
     padding: 0 8%;
@@ -162,23 +163,24 @@ select {
     gap: 30px;
 }
 
-.main-container-block{
-    background: #e1e1e1;
-    border-radius: 50px;
+.main-container-block {
+    background: #fff;
+    border-radius: 36px;
     display: flex;
     justify-content: space-between;
-
+    box-shadow: 23px 23px 48px #d7d7d7,
+    -23px -23px 48px #e9e9e9;
 
     overflow: hidden;
     padding: 5%;
 }
 
-.info-item{
+.info-item {
     display: flex;
     gap: 10px;
 }
 
-.main-container-block-info{
+.main-container-block-info {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -186,12 +188,12 @@ select {
     justify-content: space-between;
 }
 
-.block-img{
+.block-img {
     border-radius: 30px;
 }
 
 
-.button{
+.button {
     /*border: 1px solid black;*/
     padding: 10px;
     display: inline-block;
@@ -200,33 +202,33 @@ select {
 
     border-radius: 30px;
     text-decoration: none;
-    background: forestgreen;
+    background: #7587d8;
     color: white;
 }
 
-.button:hover{
-    background: #28a528;
+.button:hover {
+    background: #889bfd;
 }
 
-.site-main-idea{
+.site-main-idea {
     font-size: 60px;
 }
 
-.site-main-idea-description{
+.site-main-idea-description {
     font-size: 25px;
 }
 
-.block-idea{
+.block-idea {
     font-weight: bold;
     font-size: 40px;
 }
 
-.info-item-idea{
+.info-item-idea {
     font-weight: 500;
     font-size: 24px;
 }
 
-.block-img-container{
+.block-img-container {
     display: flex;
     align-items: center;
     max-width: 45%;
@@ -241,26 +243,26 @@ select {
     margin-top: 5%;
 }
 
-.footer-container a{
+.footer-container a {
     text-decoration: none;
     color: white;
     font-size: 14px;
 }
 
-.footer-list-name{
+.footer-list-name {
     font-size: 18px;
 }
 
-.footer-container a:hover{
+.footer-container a:hover {
     border-bottom: 1px solid darkred;
 }
 
-.footer-container h5{
+.footer-container h5 {
     padding: 0;
     margin: 0;
 }
 
-.footer-content{
+.footer-content {
     padding: 0;
     margin: 0;
     display: flex;
@@ -268,7 +270,7 @@ select {
     gap: 60px;
 }
 
-.footer-list{
+.footer-list {
     display: flex;
     gap: 20px;
     padding-top: 15px;
@@ -276,17 +278,18 @@ select {
     flex-wrap: wrap;
 }
 
-.footer-team-name{
+.footer-team-name {
     margin-bottom: 40px;
     font-size: 26px;
     text-align: center;
 }
 
-.footer-details{
+.footer-details {
     display: flex;
     justify-content: space-between;
 }
-.footer-container hr{
+
+.footer-container hr {
     margin: 40px 0;
 }
 
@@ -304,17 +307,19 @@ select {
 }
 
 
-@media (max-width: 1300px){
-    .main-container-block{
+@media (max-width: 1300px) {
+    .main-container-block {
         flex-direction: column;
         gap: 50px;
         padding: 10%;
     }
-    .block-img-container{
+
+    .block-img-container {
         max-width: 100%;
         justify-content: center;
     }
-    .main-container-block-info{
+
+    .main-container-block-info {
         max-width: 100%;
     }
 }
