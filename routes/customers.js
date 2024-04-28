@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Customer = require("../models/customer");
 const Task = require("../models/task");
-const Chatroom = require("../models/chatroom.js");
-const addUserToChatroom =
-  require("../controllers/chat-room-controllers.js").addUserToChatroom;
+
+const Chatroom = require('../models/chatroom.js')
+const addUserToChatroom = require('../controllers/chat-room-controllers.js').addUserToChatroom
+
 
 router.get("/", async (req, res) => {
   try {
