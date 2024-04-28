@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="/css/login.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,8 +32,15 @@
 
     <div class="form-container">
       <div class="choice-buttons-container">
-        <button id="customerButton" class="login-choice-button active-button">Customer</button>
-        <button id="performerButton" class="login-choice-button inactive-button">Performer</button>
+        <button id="customerButton" class="login-choice-button active-button">
+          Замовник
+        </button>
+        <button
+          id="performerButton"
+          class="login-choice-button inactive-button"
+        >
+          Виконавець
+        </button>
       </div>
       <form method="post" action="/customer/login" id="loginForm">
         <div class="design-div">
@@ -41,20 +48,82 @@
           <div class="sec-rec"></div>
         </div>
         <div class="row-form-container">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <label for="email">Електронна адреса</label>
+          <input type="text" id="email" name="email" />
+          <div class="error" id="emailError">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              role="img"
+              width="20"
+              style="margin-right: 7px"
+            >
+              <path
+                vector-effect="non-scaling-stroke"
+                stroke="var(--icon-color, #9B211B)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+              ></path>
+              <path
+                fill="var(--icon-color, #9B211B)"
+                fill-rule="evenodd"
+                vector-effect="non-scaling-stroke"
+                stroke="var(--icon-color, #9B211B)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span>Введіть електронну адресу</span>
+          </div>
         </div>
         <div class="row-form-container">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
+          <label for="password">Пароль</label>
+          <input type="password" id="password" name="password" />
+          <div class="error" id="passwordError">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              role="img"
+              width="20"
+              style="margin-right: 7px"
+            >
+              <path
+                vector-effect="non-scaling-stroke"
+                stroke="var(--icon-color, #9B211B)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-14v6"
+              ></path>
+              <path
+                fill="var(--icon-color, #9B211B)"
+                fill-rule="evenodd"
+                vector-effect="non-scaling-stroke"
+                stroke="var(--icon-color, #9B211B)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 17a.5.5 0 100-1 .5.5 0 000 1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span>Введіть пароль</span>
+          </div>
         </div>
 
         <input type="submit" value="Увійти" />
-        <p class="reg-hint">Dont have an accout?</p>
+        <p class="reg-hint">Не маєте акаунту?</p>
         <input
-        class="inverted-button auth-button"
+          class="inverted-button auth-button"
           type="button"
-          value="Sign up"
+          value="Зареєструватись"
           onclick="window.location.href = 'signup.html';"
         />
       </form>
@@ -62,24 +131,42 @@
   </body>
   <script>
     document
-      .getElementById("customerButton")
-      .addEventListener("click", function () {
-        document.getElementById("loginForm").action = "/customer/login";
-      });
-
-    document
-      .getElementById("performerButton")
-      .addEventListener("click", function () {
-        document.getElementById("loginForm").action = "/performer/login";
-      });
-
-    document
       .getElementById("loginForm")
       .addEventListener("submit", function (event) {
         event.preventDefault();
+        var errorsDiv = document.querySelectorAll(".error");
+        errorsDiv.forEach(function (error) {
+          error.style.display = "none";
+        });
 
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        var isValid = true;
+
+        const emailDiv = document.getElementById("email");
+        const passwordDiv = document.getElementById("password");
+
+        email = emailDiv.value.trim();
+        password = passwordDiv.value.trim();
+
+        if (email === "") {
+          document.getElementById("emailError").style.display = "flex";
+          emailDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          emailDiv.style.border = "0.5px solid #333333";
+        }
+        if (password === "") {
+          document.getElementById("passwordError").style.display = "flex";
+          passwordDiv.style.border = "2px solid #9b211b";
+
+          isValid = false;
+        } else {
+          passwordDiv.style.border = "0.5px solid #333333";
+        }
+
+        if (!isValid) {
+          return;
+        }
 
         const formData = {
           email: email,
@@ -101,6 +188,16 @@
               return response.json();
             } else {
               console.log("Inccorect data");
+              var emailError = document.getElementById("emailError");
+              emailError.querySelector("span").innerText =
+                "Або не правильна електронна адреса";
+              emailError.style.display = "flex";
+
+              var passwordError = document.getElementById("passwordError");
+              passwordError.querySelector("span").innerText =
+                "Aбо не правильний пароль";
+              passwordError.style.display = "flex";
+
               throw new Error("Inccorect data");
             }
           })

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/adding.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header class="header-container">
+      <div class="container">
+        <a class="site-logo" href="./index.html">
+          <img src="./images/logo.png" width="80" alt="company logo" />
+        </a>
+
+        <input
+          type="text"
+          class="task-name-input"
+          id="taskNameInput"
+          placeholder="Пошукати щось..."
+        />
+
+        <div class="sitenav-buttons-container">
+          <a href="./chats.html" class="auth-button">Повідомлення</a>
+          <a class="account-container" href="./profile.html">
+            <img
+              width="30"
+              src="./images/site-icon.svg"
+              alt="User avatatar"
+              class="user-avatar"
+            />
+            <p class="user-name">User name</p>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="main-div">
+      <h1>Створити завдання</h1>
+      <div class="div-name-category">
+        <!-- <p class="h-p">Опишіть у подробицях</p> -->
+        <p>Вкажіть назву</p>
+        <input type="text" id="input-name" oninput="countCharactersName()" />
+        <p id="char-count-name">Кількість символів: 0/70</p>
+        <p>Категорія</p>
+        <select name="category" id="select-category">
+          <option value="" disabled selected hidden>Виберіть категорію</option>
+          <option value="Ремонт та будівництво">Ремонт та будівництво</option>
+          <option value="Догляд за тваринами">Догляд за тваринами</option>
+          <option value="IT та програмування">IT та програмування</option>
+          <option value="Освіта та навчання">Освіта та навчання</option>
+          <option value="Фото/відео зйомка">Фото/відео зйомка</option>
+          <option value="Творчість та розваги">Творчість та розваги</option>
+          <option value="Домашнє господарство">Домашнє господарство</option>
+          <option value="Маркетинг та реклама">Маркетинг та реклама</option>
+          <option value="Юридичні послуги">Юридичні послуги</option>
+        </select>
+      </div>
+
+      <!-- <div class="div-photo">
+        <p>Фото</p>
+        <p>Перше фото буде на обкладинці оголошення. Перетягніть, щоб змінити порядок фото</p>
+
+        <div class="div-row-photos">
+            <div class="photoContainer">
+                <button onclick="choosePhoto(this)">Додати фото</button>
+                <input type="file" class="photoInput" accept="image/*" style="display: none;"
+                    onchange="previewPhoto(event)">
+            </div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+        </div>
+    </div> -->
+
+      <div class="div-price">
+        <p>Вкажіть ціну</p>
+        <input
+          type="text"
+          id="input-price"
+          onkeypress="return isNumberKey(event)"
+        />
+        <label for="input">₴</label>
+      </div>
+
+      <div class="div-deadline">
+        <p>Вкажіть термін виконання завдання</p>
+        <input type="datetime-local" name="" id="input-deadline" />
+      </div>
+
+      <div class="div-description">
+        <p>Опис</p>
+        <!-- <input type="text" placeholder="Опишіть, будь ласка, детальніше Ваше завдання"> -->
+        <textarea
+          name=""
+          id="textarea-description"
+          cols="30"
+          rows="10"
+          placeholder="Опишіть, будь ласка, детальніше Ваше завдання"
+          oninput="countCharactersDescription()"
+        ></textarea>
+        <p id="char-count">Кількість символів: 0/9000</p>
+      </div>
+
+      <div class="div-location">
+        <p>Місцезнаходження</p>
+
+        <input
+          type="radio"
+          name="option1"
+          id="radiobutton-online"
+          onclick="hideSelectRegions()"
+        />
+        <label for="radiobutton-online">Онлайн</label>
+
+        <input
+          type="radio"
+          name="option1"
+          id="radiobutton-offline"
+          onclick="showSelectRegions()"
+        />
+        <label for="radiobutton-online">Офлайн</label>
+
+        <select name="regions" id="select-regions">
+          <option value="">Уся Україна</option>
+          <option value="АР Крим">Крим</option>
+          <option value="Вінницька">Вінницька</option>
+          <option value="Волинська">Волинська</option>
+          <option value="Дніпропетровська">Дніпропетровська</option>
+          <option value="Донецька">Донецька</option>
+          <option value="Житомирська">Житомирська</option>
+          <option value="Закарпатська">Закарпатська</option>
+          <option value="Запорізька">Запорізька</option>
+          <option value="Івано-Франківська">Івано-Франківська</option>
+          <option value="Київська">Київська</option>
+          <option value="Кіровоградська">Кіровоградська</option>
+          <option value="Луганська">Луганська</option>
+          <option value="Львівська">Львівська</option>
+          <option value="Миколаївська">Миколаївська</option>
+          <option value="Одеська">Одеська</option>
+          <option value="Полтавська">Полтавська</option>
+          <option value="Рівненська">Рівненська</option>
+          <option value="Сумська">Сумська</option>
+          <option value="Тернопільська">Тернопільська</option>
+          <option value="Харківська">Харківська</option>
+          <option value="Херсонська">Херсонська</option>
+          <option value="Хмельницька">Хмельницька</option>
+          <option value="Черкаська">Черкаська</option>
+          <option value="Чернівецька">Чернівецька</option>
+          <option value="Чернігівська">Чернігівська</option>
+        </select>
+      </div>
+      <div class="div-button">
+        <input
+          type="button"
+          id="button-publish"
+          value="Опублікувати"
+          onclick="Publish()"
+        />
+      </div>
+    </div>
+    <script src="scripts/adding.js"></script>
+  </body>
+</html>

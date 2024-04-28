@@ -22,6 +22,12 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.error {
+  color: #9b211b;
+  font-family: Manrope;
+  font-weight: 500;
+  display: none;
+}
 .row-form-container {
   margin-top: 20px;
   width: 90%;
@@ -44,7 +50,7 @@ label {
   border: 2px solid #748efe;
   border-top: none;
 }
-input[type="email"],
+input[type="text"],
 input[type="password"] {
   margin: 0;
   width: 90%;
@@ -57,7 +63,7 @@ input[type="password"] {
 
 input[type="submit"],
 input[type="button"] {
-  width: 15vw;
+  width: 20vw;
   height: 5vh;
 
   margin-top: 20px;
@@ -122,10 +128,10 @@ input[type="button"] {
 .design-div {
   width: 100%;
   display: flex;
-
 }
 
-.first-rec, .sec-rec {
+.first-rec,
+.sec-rec {
   width: 50%;
   height: 20px;
   border-radius: 25px;
@@ -146,4 +152,18 @@ input[type="button"] {
 .inverted-button.auth-button {
   background-color: white;
   color: #425cd1;
+}
+@media screen and (max-width: 700px) {
+  #loginForm {
+    width: 80vw;
+  }
+  input[type="submit"],
+  input[type="button"] {
+    width: 35vw;
+  }
+  .site-logo {
+    border: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
 }

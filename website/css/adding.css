@@ -1,0 +1,243 @@
+/* #photoContainer {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+}
+
+#photoInput {
+    display: none;
+} */
+
+
+/* 
+
+.photoContainer {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    vertical-align: top;
+}
+
+.div-row-photos {
+    margin-bottom: 10px;
+} */
+
+/* .div-description>input[type="text"] {
+    height: 250px;
+    width: 500px;
+    word-break: break-word;
+    font-size: 20px;
+} */
+
+/* .div-description>input[type="text"]::placeholder {
+    text-align: left;
+    padding-left: 10px;
+}  */
+
+/* .deleteButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+} */
+
+
+.div-description>textarea {
+    height: 200px;
+    width: 500px;
+    resize: none;
+}
+
+#select-regions {
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+
+.container {
+    padding: 15px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container,
+.site-controls,
+.site-logo,
+.auth-button,
+.auth-buttons-container,
+.account-container,
+.chat-open-button,
+.sender-text-info,
+.chat-list-header,
+.companion,
+.details-chat-info-mainlayer,
+.companion-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-button,
+.search-option-selector,
+.site-logo {
+    padding: 13px;
+    border-radius: 24px;
+    border: 1px black solid;
+    font-weight: 600;
+    height: 40px;
+    font-size: 18px;
+}
+
+.site-logo {
+    padding: 13px;
+}
+
+.site-controls {
+    height: 40px;
+}
+
+.task-name-input {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 24px;
+    width: 300px;
+    margin-right: 30px;
+    height: 100%;
+}
+
+.auth-buttons-container>*:not(:last-child) {
+    margin-right: 10px;
+}
+
+.login-button {
+    background-color: #748EFE;
+    color: white;
+}
+
+.task-name-input::placeholder {
+    font-family: Manrope;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+
+/* мої стилі */
+
+#input-name,
+#select-category,
+#input-price,
+#input-deadline,
+#select-regions {
+    height: 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    border: 1px solid black;
+}
+
+#select-regions {
+    width: 300px;
+    margin: 15px;
+}
+
+
+#input-deadline {
+    width: 300px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#input-name {
+    width: 550px;
+}
+
+#select-category {
+    width: 300px;
+}
+
+#input-price {
+    width: 300px;
+    text-align: center;
+
+}
+
+.div-name-category {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.div-deadline,
+.div-price,
+.div-name-category,
+.div-description,
+.div-location {
+    font-size: 18px;
+}
+
+.div-price>label {
+    font-size: 25px;
+}
+
+.div-location>input[type="radio"] {
+    margin-left: 20px;
+}
+
+#char-count-name,
+#char-count {
+    font-size: 14px;
+    display: flex;
+    justify-content: end;
+}
+
+
+#textarea-description {
+    border-radius: 24px;
+    padding: 15px;
+    font-size: 18px;
+}
+
+#button-publish {
+    height: 50px;
+    width: 150px;
+    background-color: #748EFE;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-size: 18px;
+    margin: 20px;
+}
+
+.div-button {
+    display: flex;
+    justify-content: end;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 50%;
+    /* height: 100vh; */
+    /* Займає весь доступний простір по висоті */
+    margin: 0 auto;
+    /* Вирівнює по центру сторінки */
+    border: 2px solid black;
+    border-radius: 24px;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /* Додає тінь */
+
+
+}
