@@ -13,3 +13,5 @@ const getMessages = async (chatroomCollection, messageCollection, req, res) => {
     res.json({ status: "error", message: "Internal server error" });
   }
 }
+
+module.exports = getMessages

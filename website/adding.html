@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/adding.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Створити завдання</h1>
+    <div class="div-name-category">
+        <p>Опишіть у подробицях</p>
+        <p>Вкажіть назву</p>
+        <input type="text" id="input-name" oninput="countCharactersName()">
+        <p id="char-count-name">Кількість символів: 0/70</p>
+        <p>Категорія</p>
+        <select name="category" id="select-category">
+            <option value="" disabled selected hidden>Виберіть категорію</option>
+            <option value="Category 1">Ремонт та будівництво</option>
+            <option value="Category 2">Догляд за тваринами</option>
+            <option value="Category 3">IT та програмування</option>
+            <option value="Category 4">Освіта та навчання</option>
+            <option value="Category 5">Фото/відео зйомка</option>
+            <option value="Category 5">Творчість та розваги</option>
+            <option value="Category 6">Домашнє господарство</option>
+            <option value="Category 7">Маркетинг та реклама</option>
+            <option value="Category 8">Юридичні послуги</option>
+        </select>
+    </div>
+
+    <div class="div-photo">
+        <p>Фото</p>
+        <p>Перше фото буде на обкладинці оголошення. Перетягніть, щоб змінити порядок фото</p>
+        <!-- <div id="photoContainer">
+            <button onclick="choosePhoto()">Додати фото</button>
+            <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(event)" />
+        </div> -->
+
+        <div class="div-row-photos">
+            <div class="photoContainer">
+                <button onclick="choosePhoto(this)">Додати фото</button>
+                <input type="file" class="photoInput" accept="image/*" style="display: none;"
+                    onchange="previewPhoto(event)">
+            </div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+        </div>
+    </div>
+
+    <div class="div-price">
+        <p>Вкажіть ціну</p>
+        <input type="text" id="input-price" onkeypress="return isNumberKey(event)">
+        <label for="input">₴</label>
+    </div>
+
+    <div class="deadline">
+        <p>Вкажіть термін виконання завдання</p>
+        <input type="datetime-local" name="" id="input-deadline">
+    </div>
+
+    <div class="div-description">
+        <p>Опис</p>
+        <!-- <input type="text" placeholder="Опишіть, будь ласка, детальніше Ваше завдання"> -->
+        <textarea name="" id="textarea-description" cols="30" rows="10"
+            placeholder="Опишіть, будь ласка, детальніше Ваше завдання"
+            oninput="countCharactersDescription()"></textarea>
+        <p id="char-count">Кількість символів: 0/9000</p>
+    </div>
+
+    <div class="div-location">
+        <p>Місцезнаходження</p>
+
+        <input type="radio" name="option1" id="radiobutton-online" onclick="hideSelectRegions()">
+        <label for="radiobutton-online">Онлайн</label>
+
+        <input type="radio" name="option1" id="radiobutton-offline" onclick="showSelectRegions()">
+        <label for="radiobutton-online">Офлайн</label>
+
+        <select name="regions" id="select-regions">
+            <option value="" disabled selected>Виберіть область</option>
+            <option value="Vinnytsia Region">Вінницька область</option>
+            <option value="Volyn Region">Волинська область</option>
+            <option value="Dnipropetrovsk Region">Дніпропетровська область</option>
+            <option value="Donetsk Region">Донецька область</option>
+            <option value="Zhytomyr Region">Житомирська область</option>
+            <option value="Zakarpattia Region">Закарпатська область</option>
+            <option value="Zaporizhia Region">Запорізька область</option>
+            <option value="Ivano-Frankivsk Region">Івано-Франківська область</option>
+            <option value="Kiev Region">Київська область</option>
+            <option value="Kirovohrad Region">Кіровоградська область</option>
+            <option value="Luhansk Region">Луганська область</option>
+            <option value="Lviv Region">Львівська область</option>
+            <option value="Mykolaiv Region">Миколаївська область</option>
+            <option value="Odessa Region">Одеська область</option>
+            <option value="Poltava Region">Полтавська область</option>
+            <option value="Rivne Region">Рівненська область</option>
+            <option value="Sumy Region">Сумська область</option>
+            <option value="Ternopil Region">Тернопільська область</option>
+            <option value="Kharkiv Region">Харківська область</option>
+            <option value="Kherson Region">Херсонська область</option>
+            <option value="Khmelnytskyi Region">Хмельницька область</option>
+            <option value="Cherkasy Region">Черкаська область</option>
+            <option value="Chernivtsi Region">Чернівецька область</option>
+            <option value="Chernihiv Region">Чернігівська область</option>
+        </select>
+
+    </div>
+
+    <input type="button" value="Опублікувати" onclick="Publish()">
+    <script src="scripts/adding.js"></script>
+</body>
+
+</html>
