@@ -1,5 +1,6 @@
 body {
   font-family: Manrope;
+  overflow-x: hidden;
 }
 .site-logo {
   margin-top: 30px;
@@ -16,11 +17,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+.error {
+  color: #9b211b;
+  font-family: Manrope;
+  font-weight: 500;
+  display: none;
+}
 .main-selection-container {
-  position: absolute;
-  bottom: 25%;
-  left: 50%;
-  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45vw;
 }
 .selection-container {
   display: flex;
@@ -74,7 +82,7 @@ h3 {
 input[type="submit"],
 input[type="button"],
 #addCategoriesBtn {
-  width: 15vw;
+  width: 22vw;
   height: 5vh;
 
   margin-top: 20px;
@@ -195,7 +203,8 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="tel"],
-#categories {
+#categories,
+select {
   margin: 0;
   width: 100%;
   height: 4vh;
@@ -203,6 +212,11 @@ input[type="tel"],
   border: 0.5px solid #333333;
   padding-left: 10px;
   font-size: 17px;
+  margin-bottom: 5px;
+}
+select {
+  width: 102.5%;
+  height: 4vh;
 }
 #categories {
   height: auto;
@@ -217,6 +231,7 @@ span {
   margin-left: 6px;
   margin-top: 3px;
 }
+
 .category {
   display: flex;
   align-content: center;
@@ -275,6 +290,7 @@ span {
 }
 .customer-signup-container {
   display: none;
+  margin-right: 20px;
 }
 .performer-signup-container {
   display: none;
@@ -287,7 +303,6 @@ span {
   transform: translate(-50%, -50%);
   width: 40vw;
   height: 60vh;
-  background-color: #d9d9d9;
 
   background-color: #fff;
   border-radius: 36px;
@@ -299,6 +314,28 @@ span {
   transition: opacity 0.3s ease;
 }
 
+#account-exists-container {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: auto;
+  padding-bottom: 20px;
+  background-color: #fff;
+  border-radius: 36px;
+  box-shadow: 23px 23px 48px #d7d7d7, -23px -23px 48px #e9e9e9;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+#error-account-container-text {
+  display: block;
+  text-align: left;
+  margin: 0;
+  margin-left: 30px;
+  margin-top: 5px;
+}
 .exit-container {
   position: absolute;
   top: 5.5%;
@@ -336,6 +373,14 @@ span {
   transform: rotate(-45deg);
   transition: background-color 0.3s ease;
 }
+#ok-button {
+  margin-top: 0px;
+  width: 90%;
+}
+.error-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
 
 @media screen and (max-width: 700px) {
   .selection-container {
@@ -343,10 +388,10 @@ span {
   }
   #customerForm,
   #performerForm {
-    width: 80vw;
+    width: auto;
   }
   .main-selection-container {
-    bottom: 5%;
+    width: 90vw;
   }
   .signup-selection-container {
     width: 90vw;
@@ -360,5 +405,18 @@ span {
   .categories-container {
     width: 85vw;
     height: 60vh;
+  }
+  .site-logo {
+    margin-top: 20px;
+    margin-left: 15px;
+
+    border: 0px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+  #account-exists-container {
+    width: 70vw;
   }
 }

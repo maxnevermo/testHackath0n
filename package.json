@@ -4,7 +4,8 @@
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
     "mongoose": "^8.3.2",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "socketio": "^1.0.0"
   },
   "name": "testhackath0n",
   "version": "1.0.0",

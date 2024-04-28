@@ -4,51 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="./images/site-icon.svg" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./images/site-icon.svg"
+      type="image/x-icon"
+    />
   </head>
   <body>
-    <div>
+    <header>
+      <a class="site-logo" href="./index.html">
+        <img
+          src="./images/logo.png"
+          width="100"
+          height="40"
+          alt="company logo"
+        />
+      </a>
+    </header>
+
+    <div class="form-container">
       <button id="customerButton">Customer</button>
       <button id="performerButton">Performer</button>
-      <form method="post" action="/customer/login" id="customerForm">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required /><br /><br />
+      <form method="post" action="/customer/login" id="loginForm">
+        <div class="row-form-container">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="row-form-container">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
 
-        <label for="password">Password:</label>
+        <input type="submit" value="Увійти" />
+        <p>Dont have an accout?</p>
         <input
-          type="password"
-          id="password"
-          name="password"
-          required
-        /><br /><br />
-
-        <input type="submit" />
+          type="button"
+          value="Sign up"
+          onclick="window.location.href = 'signup.html';"
+        />
       </form>
-
-      <p>Dont have an accout? <a href="signup.html">Sign Up</a></p>
     </div>
   </body>
   <script>
     document
       .getElementById("customerButton")
       .addEventListener("click", function () {
-        document.getElementById("customerForm").action = "/customer/login";
+        document.getElementById("loginForm").action = "/customer/login";
       });
 
     document
       .getElementById("performerButton")
       .addEventListener("click", function () {
-        document.getElementById("customerForm").action = "/performer/login";
+        document.getElementById("loginForm").action = "/performer/login";
       });
 
     document
-      .getElementById("customerForm")
+      .getElementById("loginForm")
       .addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -61,7 +80,7 @@
         };
         console.log(formData);
 
-        const formAction = document.getElementById("customerForm").action;
+        const formAction = document.getElementById("loginForm").action;
 
         fetch(formAction, {
           method: "POST",
@@ -79,7 +98,7 @@
             }
           })
           .then((userData) => {
-            const formAction = document.getElementById("customerForm").action;
+            const formAction = document.getElementById("loginForm").action;
             const trimmedAction = formAction.replace(/^.*\/\/[^\/]+/, "");
 
             if (trimmedAction == "/customer/login") {
