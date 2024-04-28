@@ -1,11 +1,11 @@
-const Chatroom = require('../models/chatroom')
-const mongoose = require('mongoose')
-const con = mongoose.connection
+const Chatroom = require("../models/chatroom");
+const mongoose = require("mongoose");
+const con = mongoose.connection;
 
 const newChatroom = async (req, res) => {
   try {
-    const { name, members, roomName } = req.body;
-    const chatroom = new Chatroom({ name, members, roomName });
+    const { name, members, roomId } = req.body;
+    const chatroom = new Chatroom({ name, members, roomId });
     await chatroom.save();
     res.json({
       status: "success",
@@ -16,12 +16,17 @@ const newChatroom = async (req, res) => {
     console.error(err);
     res.json({ status: "error", message: "Internal server error" });
   }
-}
-const addUserToChatroom = async (chatroomCollection, userCollection, req, res) => {
+};
+const addUserToChatroom = async (
+  chatroomCollection,
+  userCollection,
+  req,
+  res
+) => {
   try {
     const { userName, chatroomName } = req.body;
 
-    const curRoom = await chatroomCollection.findOne({ roomName: chatroomName });
+    const curRoom = await chatroomCollection.findOne({ roomId: chatroomName });
     const existingMembers = curRoom.members.map((member) => member);
     const allMembers = [...existingMembers, userName];
     const existingChatroom = await chatroomCollection.findOne({
@@ -49,7 +54,7 @@ const addUserToChatroom = async (chatroomCollection, userCollection, req, res) =
     console.error(err);
     res.status(500).json({ status: "error", message: "Internal server error" });
   }
-}
+};
 
 const chatroomByUsername = async (collection, req, res) => {
   try {
@@ -64,11 +69,11 @@ const chatroomByUsername = async (collection, req, res) => {
     console.error(err);
     res.json({ status: "error", message: "Internal server error" });
   }
-}
+};
 const chatroomData = async (collection, req, res) => {
   try {
     const chatroomName = req.params.chatroomName;
-    const chatroom = await collection.findOne({ roomName: chatroomName });
+    const chatroom = await collection.findOne({ roomId: chatroomName });
     if (!chatroom) {
       return res.json({ status: "error", message: "Chatroom not found" });
     }
@@ -77,7 +82,7 @@ const chatroomData = async (collection, req, res) => {
     console.error(err);
     res.json({ status: "error", message: "Internal server error" });
   }
-}
+};
 
 const findRoom = async (collection, req, res) => {
   try {
@@ -102,16 +107,16 @@ const findRoom = async (collection, req, res) => {
     console.error(err);
     res.status(500).json({ status: "error", message: "Internal server error" });
   }
-}
+};
 
 const randomChatRoomName = (length) => {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let result = '';
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
 
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
     result += characters.charAt(randomIndex);
   }
   return result;
-}
-
+};
