@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/adding.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Створити завдання</h1>
+    <div class="div-name-category">
+        <p>Опишіть у подробицях</p>
+        <p>Вкажіть назву</p>
+        <input type="text">
+        <p>Категорія</p>
+        <select name="category" id="">
+            <option value=""></option>
+        </select>
+    </div>
+
+    <div class="div-photo">
+        <p>Фото</p>
+        <p>Перше фото буде на обкладинці оголошення. Перетягніть, щоб змінити порядок фото</p>
+        <!-- <div id="photoContainer">
+            <button onclick="choosePhoto()">Додати фото</button>
+            <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(event)" />
+        </div> -->
+
+        <div class="div-row-photos">
+            <div class="photoContainer">
+                <button onclick="choosePhoto(this)">Додати фото</button>
+                <input type="file" class="photoInput" accept="image/*" style="display: none;"
+                    onchange="previewPhoto(event)">
+            </div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+            <div class="photoContainer"></div>
+        </div>
+    </div>
+
+    <div>
+        <p>Вкажіть ціну</p>
+        <input type="text">
+        <label for="input">₴</label>
+    </div>
+
+    <div class="div-description">
+        <p>Опис</p>
+        <input type="text" placeholder="Опишіть, будь ласка, детальніше Ваше завдання">
+    </div>
+
+    <div class="div-location">
+        <p>Місцезнаходження</p>
+
+        <input type="radio" name="option1" id="radiobutton-online">
+        <label for="radiobutton-online">Віддалено</label>
+
+        <input type="text">
+    </div>
+
+    <div class="div-contacts">
+        <p>Контактна особа</p>
+        <input type="text">
+        <p>Email-адреса</p>
+        <input type="text">
+        <p>Номер</p>
+        <input type="text">
+    </div>
+
+    <input type="button" value="Опублікувати">
+    <script src="scripts/adding.js"></script>
+</body>
+
+</html>
