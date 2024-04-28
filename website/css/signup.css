@@ -320,6 +320,7 @@ span {
 }
 
 #account-exists-container {
+  padding: 15px;
   opacity: 0;
   position: absolute;
   top: 50%;
