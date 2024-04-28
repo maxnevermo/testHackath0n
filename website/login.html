@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="/css/login.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,8 +32,15 @@
 
     <div class="form-container">
       <div class="choice-buttons-container">
-        <button id="customerButton" class="login-choice-button active-button">Customer</button>
-        <button id="performerButton" class="login-choice-button inactive-button">Performer</button>
+        <button id="customerButton" class="login-choice-button active-button">
+          Замовник
+        </button>
+        <button
+          id="performerButton"
+          class="login-choice-button inactive-button"
+        >
+          Виконавець
+        </button>
       </div>
       <form method="post" action="/customer/login" id="loginForm">
         <div class="design-div">
@@ -41,20 +48,20 @@
           <div class="sec-rec"></div>
         </div>
         <div class="row-form-container">
-          <label for="email">Email</label>
+          <label for="email">Електронна адреса</label>
           <input type="email" id="email" name="email" required />
         </div>
         <div class="row-form-container">
-          <label for="password">Password</label>
+          <label for="password">Пароль</label>
           <input type="password" id="password" name="password" required />
         </div>
 
         <input type="submit" value="Увійти" />
-        <p class="reg-hint">Dont have an accout?</p>
+        <p class="reg-hint">Не маєте акаунту?</p>
         <input
-        class="inverted-button auth-button"
+          class="inverted-button auth-button"
           type="button"
-          value="Sign up"
+          value="Зареєструватись"
           onclick="window.location.href = 'signup.html';"
         />
       </form>
