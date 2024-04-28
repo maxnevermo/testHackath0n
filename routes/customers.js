@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Customer = require("../models/customer");
 const Task = require("../models/task");
-const Chatroom = require('../models/chatroom.js')
-const addUserToChatroom = require('../controllers/chat-room-controllers.js').addUserToChatroom()
+const Chatroom = require("../models/chatroom.js");
+const addUserToChatroom =
+  require("../controllers/chat-room-controllers.js").addUserToChatroom;
 
 router.get("/", async (req, res) => {
   try {
@@ -76,15 +77,17 @@ router.put("/:id", async (req, res) => {
           price: taskData.price,
           category: taskData.category,
           deadline: taskData.deadline,
-          posted: taskData.posted,
           format: taskData.format,
           location: taskData.location || "",
           customer: customer._id,
         });
 
-        const savedTask = await newTask.save();
-
-        customer.tasks.push(savedTask._id);
+        try {
+          const savedTask = await newTask.save();
+          customer.tasks.push(savedTask._id);
+        } catch (error) {
+          console.error(error);
+        }
       }
     }
 
@@ -129,7 +132,9 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ error: "User not found" });
   }
 });
-router.post('/add-to-chatroom', async (req, res) => addUserToChatroom(Chatroom, Customer, req, res))
+router.post("/add-to-chatroom", async (req, res) =>
+  addUserToChatroom(Chatroom, Customer, req, res)
+);
 
 module.exports = router;
 
