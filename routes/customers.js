@@ -31,11 +31,9 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const { firstname, middlename, surname, phone, email, location, password } =
-      req.body;
+    const { firstname, surname, phone, email, location, password } = req.body;
     const newCustomer = new Customer({
       firstname,
-      middlename,
       surname,
       phone,
       email,

@@ -4,16 +4,27 @@ function togglePerformerRadio() {
   var customerRadio = document.getElementById("customerRadio");
   var customerContainer = document.getElementById("customerContainer");
   var button = document.querySelector(".signup-button");
+  const performerSvg = document.getElementById("performerSVG");
+  const performerPaths = performerSvg.querySelectorAll("path");
+  const customerSvg = document.getElementById("customerSVG");
+  const customerPaths = customerSvg.querySelectorAll("path");
 
   performerRadio.checked = true;
-  performerContainer.style.border = "2px solid #333333";
-
+  customerRadio.checked = false;
+  performerContainer.classList.add("selected");
+  customerContainer.classList.remove("selected");
   button.value = "Sign up as performer";
 
-  if (performerRadio.checked) {
-    customerRadio.checked = false;
-    customerContainer.style.border = "2px solid #d9d9d9";
-  }
+  document.getElementById("customerText").style.color = "black";
+  document.getElementById("performerText").style.color = "white";
+
+  performerPaths.forEach((path) => {
+    path.setAttribute("stroke", "white");
+  });
+
+  customerPaths.forEach((path) => {
+    path.setAttribute("stroke", "black");
+  });
 }
 
 function toggleCustomerRadio() {
@@ -22,16 +33,27 @@ function toggleCustomerRadio() {
   var customerRadio = document.getElementById("customerRadio");
   var customerContainer = document.getElementById("customerContainer");
   var button = document.querySelector(".signup-button");
+  const performerSvg = document.getElementById("performerSVG");
+  const performerPaths = performerSvg.querySelectorAll("path");
+  const customerSvg = document.getElementById("customerSVG");
+  const customerPaths = customerSvg.querySelectorAll("path");
 
   customerRadio.checked = true;
-  customerContainer.style.border = "2px solid #333333";
-
+  performerRadio.checked = false;
+  customerContainer.classList.add("selected");
+  performerContainer.classList.remove("selected");
   button.value = "Sign up as customer";
 
-  if (customerRadio.checked) {
-    performerRadio.checked = false;
-    performerContainer.style.border = "2px solid #d9d9d9";
-  }
+  document.getElementById("customerText").style.color = "white";
+  document.getElementById("performerText").style.color = "black";
+
+  performerPaths.forEach((path) => {
+    path.setAttribute("stroke", "black");
+  });
+
+  customerPaths.forEach((path) => {
+    path.setAttribute("stroke", "white");
+  });
 }
 
 function openSignupForm() {
@@ -82,8 +104,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const categoriesData = [
-    { name: "Category 1", subcategories: ["Subcategory 1", "Subcategory 2"] },
-    { name: "Category 2", subcategories: ["Subcategory 3", "Subcategory 4"] },
+    {
+      name: "Category 1",
+      subcategories: [
+        "Subcategory 1",
+        "Subcategory 2",
+        "Subcategory 3",
+        "Subcategory 4",
+        "Subcategory 1",
+        "Subcategory 2",
+        "Subcategory 3",
+        "Subcategory 4",
+        "Subcategory 1",
+        "Subcategory 2",
+        "Subcategory 3",
+        "Subcategory 4",
+        "Subcategory 2",
+        "Subcategory 3",
+        "Subcategory 4",
+        "Subcategory 1",
+        "Subcategory 2",
+        "Subcategory 3",
+        "Subcategory 4",
+        "Subcategory 2",
+        "Subcategory 3",
+        "Subcategory 4",
+        "Subcategory 1",
+        "Subcategory 2",
+        "Subcategory 3",
+        "Subcategory 4",
+      ],
+    },
+    { name: "Category 2", subcategories: ["Subcategory 5", "Subcategory 6"] },
   ];
 
   const mainCategorySelect = document.getElementById("mainCategorySelect");
@@ -93,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     option.textContent = category.name;
     mainCategorySelect.appendChild(option);
   });
+  populateSubcategories();
 
   function populateSubcategories() {
     const selectedCategory = mainCategorySelect.value;
@@ -104,18 +157,32 @@ document.addEventListener("DOMContentLoaded", function () {
         (cat) => cat.name === selectedCategory
       );
       if (category) {
+        const subcategoriesWrapper = document.createElement("div");
+        subcategoriesWrapper.classList.add("subcategories-wrapper");
+
         category.subcategories.forEach((subcategory) => {
+          const div = document.createElement("div");
           const checkbox = document.createElement("input");
           checkbox.type = "checkbox";
           checkbox.name = "subcategory";
           checkbox.value = subcategory;
           checkbox.id = subcategory;
           const label = document.createElement("label");
-          label.htmlFor = subcategory;
+
           label.textContent = subcategory;
-          subcategoriesDiv.appendChild(checkbox);
-          subcategoriesDiv.appendChild(label);
-          subcategoriesDiv.appendChild(document.createElement("br"));
+
+          checkbox.style.margin = "0";
+          checkbox.style.accentColor = "#748efe";
+          checkbox.style.color = "#fff";
+          label.style.margin = "0";
+          label.style.marginLeft = "10px";
+          div.style.marginBottom = "10px";
+
+          div.appendChild(checkbox);
+          div.appendChild(label);
+
+          div.classList.add("categoryItem");
+          subcategoriesWrapper.appendChild(div);
 
           console.log(selectedCategories);
           // Check if subcategory is in selectedCategories and set checkbox accordingly
@@ -145,6 +212,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           });
         });
+
+        subcategoriesDiv.appendChild(subcategoriesWrapper);
       }
     }
   }
@@ -153,16 +222,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document
     .getElementById("addCategoriesBtn")
-    .addEventListener("click", function () {
-      document.getElementById("categoriesDropdown").style.display = "none";
-      const mainCategorySelect = document.getElementById("mainCategorySelect");
-      mainCategorySelect.selectedIndex = 0;
-      subcategoriesDiv.innerHTML = "";
-    });
+    .addEventListener("click", exitCategories);
 
   document
     .getElementById("openCategoriesBtn")
     .addEventListener("click", function () {
-      document.getElementById("categoriesDropdown").style.display = "block";
+      const categoriesDropdown = document.getElementById("categoriesDropdown");
+      categoriesDropdown.style.display = "block";
+
+      setTimeout(() => {
+        categoriesDropdown.style.opacity = "1";
+      }, 100);
     });
 });
+function exitCategories() {
+  const categoriesDropdown = document.getElementById("categoriesDropdown");
+  categoriesDropdown.style.opacity = "0";
+  setTimeout(() => {
+    categoriesDropdown.style.display = "none";
+  }, 300);
+  const mainCategorySelect = document.getElementById("mainCategorySelect");
+  mainCategorySelect.selectedIndex = 0;
+  subcategoriesDiv.innerHTML = "";
+}
