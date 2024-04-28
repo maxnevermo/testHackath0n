@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const chatroomSchema = new mongoose.Schema({
   name: {
@@ -12,7 +12,7 @@ const chatroomSchema = new mongoose.Schema({
       ref: "User",
     },
   ],
-  roomName: {
+  roomId: {
     type: String,
   },
 });
