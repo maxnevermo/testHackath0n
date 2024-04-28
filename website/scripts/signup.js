@@ -13,7 +13,7 @@ function togglePerformerRadio() {
   customerRadio.checked = false;
   performerContainer.classList.add("selected");
   customerContainer.classList.remove("selected");
-  button.value = "Sign up as performer";
+  button.value = "Зареєструватись як виконавець";
 
   document.getElementById("customerText").style.color = "black";
   document.getElementById("performerText").style.color = "white";
@@ -42,7 +42,7 @@ function toggleCustomerRadio() {
   performerRadio.checked = false;
   customerContainer.classList.add("selected");
   performerContainer.classList.remove("selected");
-  button.value = "Sign up as customer";
+  button.value = "Зареєструватись як замовник";
 
   document.getElementById("customerText").style.color = "white";
   document.getElementById("performerText").style.color = "black";
@@ -111,28 +111,28 @@ document.addEventListener("DOMContentLoaded", function () {
         "Subcategory 2",
         "Subcategory 3",
         "Subcategory 4",
-        "Subcategory 1",
-        "Subcategory 2",
-        "Subcategory 3",
-        "Subcategory 4",
-        "Subcategory 1",
-        "Subcategory 2",
-        "Subcategory 3",
-        "Subcategory 4",
-        "Subcategory 2",
-        "Subcategory 3",
-        "Subcategory 4",
-        "Subcategory 1",
-        "Subcategory 2",
-        "Subcategory 3",
-        "Subcategory 4",
-        "Subcategory 2",
-        "Subcategory 3",
-        "Subcategory 4",
-        "Subcategory 1",
-        "Subcategory 2",
-        "Subcategory 3",
-        "Subcategory 4",
+        "Subcategory 5",
+        "Subcategory 6",
+        "Subcategory 7",
+        "Subcategory 8",
+        "Subcategory 9",
+        "Subcategory 10",
+        "Subcategory 11",
+        "Subcategory 12",
+        "Subcategory 13",
+        "Subcategory 14",
+        "Subcategory 15",
+        "Subcategory 16",
+        "Subcategory 17",
+        "Subcategory 18",
+        "Subcategory 19",
+        "Subcategory 20",
+        "Subcategory 21",
+        "Subcategory 22",
+        "Subcategory 23",
+        "Subcategory 24",
+        "Subcategory 25",
+        "Subcategory 26",
       ],
     },
     { name: "Category 2", subcategories: ["Subcategory 5", "Subcategory 6"] },
@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
     option.textContent = category.name;
     mainCategorySelect.appendChild(option);
   });
-  populateSubcategories();
 
   function populateSubcategories() {
     const selectedCategory = mainCategorySelect.value;
@@ -168,7 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
           checkbox.value = subcategory;
           checkbox.id = subcategory;
           const label = document.createElement("label");
-
+          label.style.width = "120px";
+          label.htmlFor = checkbox.id;
           label.textContent = subcategory;
 
           checkbox.style.margin = "0";
@@ -228,6 +228,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("openCategoriesBtn")
     .addEventListener("click", function () {
       const categoriesDropdown = document.getElementById("categoriesDropdown");
+      populateSubcategories();
+
       categoriesDropdown.style.display = "block";
 
       setTimeout(() => {
@@ -244,4 +246,20 @@ function exitCategories() {
   const mainCategorySelect = document.getElementById("mainCategorySelect");
   mainCategorySelect.selectedIndex = 0;
   subcategoriesDiv.innerHTML = "";
+}
+function closeExistingAccount() {
+  var div = document.getElementById("account-exists-container");
+  div.style.opacity = "0";
+  setTimeout(() => {
+    div.style.display = "none";
+  }, 300);
+}
+
+function openExistingAccount() {
+  var div = document.getElementById("account-exists-container");
+  div.style.display = "block";
+
+  setTimeout(() => {
+    div.style.opacity = "1";
+  }, 100);
 }

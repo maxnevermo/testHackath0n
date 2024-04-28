@@ -6,7 +6,7 @@ const Performer = require("./models/performer");
 const Message = require("./models/message");
 const serverPort = 9000;
 const socketioPort = 3001;
-const io = require('socket.io')(socketioPort);
+const io = require("socket.io")(socketioPort);
 
 io.on("connection", (socket) => {
   console.log("A user connected");
@@ -69,6 +69,6 @@ app.use("/performer", performerRouter);
 
 app.get("/", () => {});
 
-app.listen(serverPort, () => {
+app.listen(serverPort, "0.0.0.0", () => {
   console.log(`Server is running on port ${serverPort}`);
 });
