@@ -31,9 +31,15 @@
     </header>
 
     <div class="form-container">
-      <button id="customerButton">Customer</button>
-      <button id="performerButton">Performer</button>
+      <div class="choice-buttons-container">
+        <button id="customerButton" class="login-choice-button active-button">Customer</button>
+        <button id="performerButton" class="login-choice-button inactive-button">Performer</button>
+      </div>
       <form method="post" action="/customer/login" id="loginForm">
+        <div class="design-div">
+          <div class="first-rec"></div>
+          <div class="sec-rec"></div>
+        </div>
         <div class="row-form-container">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required />
@@ -44,8 +50,9 @@
         </div>
 
         <input type="submit" value="Увійти" />
-        <p>Dont have an accout?</p>
+        <p class="reg-hint">Dont have an accout?</p>
         <input
+        class="inverted-button auth-button"
           type="button"
           value="Sign up"
           onclick="window.location.href = 'signup.html';"

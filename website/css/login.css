@@ -37,8 +37,12 @@ label {
   align-items: center;
 
   width: 35vw;
-  border-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+
   border: 2px solid #748efe;
+  border-top: none;
 }
 input[type="email"],
 input[type="password"] {
@@ -82,4 +86,64 @@ input[type="button"]:active {
 
 input[type="button"] {
   margin-top: 0;
+}
+
+.choice-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.login-choice-button {
+  width: 50%;
+  height: 6vh;
+
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border: 2px solid #748efe;
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.active-button {
+  border-bottom: none;
+}
+
+.inactive-button {
+  border: none;
+}
+
+.design-div {
+  width: 100%;
+  display: flex;
+
+}
+
+.first-rec, .sec-rec {
+  width: 50%;
+  height: 20px;
+  border-radius: 25;
+  border: 2px solid #748efe;
+  border: none;
+}
+
+.sec-rec {
+  border-top: 2px solid #748efe;
+  border-top-right-radius: 100px;
+}
+
+.reg-hint {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.inverted-button.auth-button {
+  background-color: white;
+  color: #425cd1;
 }

@@ -1,21 +1,18 @@
 {
-  "dependencies": {
-    "emoji-picker-element": "^1.21.3",
-    "express": "^4.19.2",
-    "mongodb": "^6.5.0",
-    "mongoose": "^8.3.2",
-    "socket.io": "^4.7.5",
-    "socketio": "^1.0.0"
-  },
   "name": "testhackath0n",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2",
+    "socket.io": "^4.7.5"
+  },
   "devDependencies": {
     "nodemon": "^3.1.0"
   }
