@@ -16,11 +16,7 @@
                 <img src="./images/logo.png" width="80" alt="company logo">
             </a>
     
-            <input type="text" class="task-name-input" id="taskNameInput" placeholder="Пошукати щось..."
-            <svg>
-            <use href></use>
-            </svg>>
-
+            <input type="text" class="task-name-input" id="taskNameInput" placeholder="Пошукати щось...">
 
             <div class="sitenav-buttons-container">
                 <a href="./chats.html" class="auth-button">Повідомлення</a>
@@ -34,8 +30,8 @@
 
     <section class="container filters-container">
         <div class="filters-container">
-            <label for="categoryFilterSelect">Оберіть категорію:</label>
-            <select name="category-filter-select" id="categoryFilterSelect">
+            <label>Оберіть категорію
+            <select name="category-filter-select" class="search-filter-select" id="categoryFilterSelect">
                 <option value="" class="default-choice">Будь-яка категорія</option>
                 <option value="">Ремонт та будівництво</option>
                 <option value="">Догляд за тваринами</option>
@@ -47,13 +43,22 @@
                 <option value="">Маркетинг та реклама</option>
                 <option value="">Юридичні послуги</option>
             </select>
+            </label>
 
-            <p>Оберіть формат надання допомоги:</p>
-            <input type="radio" name="format-choice" id="offlineChoice" checked>
-            <input type="radio" name="format-choice" id="onlineChoice">
+            <div class="help-format">
+                <p>Оберіть формат надання допомоги</p>
+                <label>
+                    <input type="radio" name="format-choice" id="offlineChoice" value="ofline" checked>
+                    Офлайн
+                </label>
+                <label>
+                    <input type="radio" name="format-choice" id="onlineChoice" value="online">
+                    Онлайн
+                </label>
+            </div>
 
-            <label for="regionFilterSelect">Оберіть регіон:</label>
-            <select name="region-select" id="regionFilterSelect">
+            <label>Оберіть регіон
+            <select name="region-select" class="search-filter-select" id="regionFilterSelect">
                 <option value="">Уся Україна</option>
                 <option value="">АР Крим</option>
                 <option value="">Вінницька область</option>
@@ -81,43 +86,70 @@
                 <option value="">Чернівецька область</option>
                 <option value="">Чернігівська область</option>
             </select>
+            </label>
 
-            <div>
+            <div class="price-container">
                 <p>Ціна</p>
-                <input type="number" id="fromInput" placeholder="від">
-                <input type="number" id="toInput" placeholder="до">
+                <input type="number" id="fromInput" placeholder="від" min="0" class="task-name-input">
+                <input type="number" id="toInput" placeholder="до" min="0" class="task-name-input">
             </div>
         </div>
     </section>
 
     <section class="container advertisement-container">
         <ul class="advertisement-list">
-            <li class="advertisement-list-item">
-                <a href="">
-                    <h2>Назва оголошення</h2>
-                    <p>Категорія оголошення</p>
-                    <p>Опис оголошення</p>
+            <li class="advertisement-list-item container">
+                <a href="./ad-page.html">
+                    <div class="main-info">
+                        <h2>Назва оголошення</h2>
+                        <p>Категорія оголошення</p>
+                        <div class="location">
+                            <p class="place-text">Місце</p>
+                            <p class="date-text">Дата публікації</p>
+                        </div>
+                    </div>
+
+                <p class="item-descr">Опис оголошення</p>
+
+                <div class="right-part">
                     <p>Ціна оголошення</p>
-                </a>
-                <a href="">Плюсик</a>
+                    <a href="">Плюсик</a>
+                </div>
+            </a>
             </li>
-            <li class="advertisement-list-item">
-                <a href="">
-                    <h2>Назва оголошення</h2>
-                    <p>Категорія оголошення</p>
-                    <p>Опис оголошення</p>
-                    <p>Ціна оголошення</p>
+            <li class="advertisement-list-item container">
+                <a href="./ad-page.html">
+                    <div class="main-info">
+                        <h2>Назва оголошення</h2>
+                        <p>Категорія оголошення</p>
+                        <div class="location">
+                            <p class="place-text">Місце</p>
+                            <p class="date-text">Дата публікації</p>
+                        </div>
+                    </div>
+                    <p class="item-descr">Опис оголошення</p>
                 </a>
-                <a href="">Плюсик</a>
+                <div class="right-part">
+                    <p>Ціна оголошення</p>
+                    <a href="">Плюсик</a>
+                </div>
             </li>
-            <li class="advertisement-list-item">
-                <a href="">
-                    <h2>Назва оголошення</h2>
-                    <p>Категорія оголошення</p>
-                    <p>Опис оголошення</p>
-                    <p>Ціна оголошення</p>
+            <li class="advertisement-list-item container">
+                <a href="./ad-page.html">
+                    <div class="main-info">
+                        <h2>Назва оголошення</h2>
+                        <p>Категорія оголошення</p>
+                        <div class="location">
+                            <p class="place-text">Місце</p>
+                            <p class="date-text">Дата публікації</p>
+                        </div>
+                    </div>
+                    <p class="item-descr">Опис оголошення</p>
                 </a>
-                <a href="">Плюсик</a>
+                <div class="right-part">
+                    <p>Ціна оголошення</p>
+                    <a href="">Плюсик</a>
+                </div>
             </li>
         </ul>
     </section>

@@ -58,10 +58,69 @@
     margin-right: 5px;
 }
 
-.container {
+/* .container {
     outline: 1px solid tomato;
-}
+} */
+
+/*MAIN CONTAINER*/
 
 .main-container {
     flex-direction: column;
+}
+
+.filters-container.container {
+    padding-top: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid gainsboro;
+}
+
+.filters-container, .filters-container > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters-container > label {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.filters-container > *:not(:last-child) {
+    margin-right: 25px;
+}
+
+.search-filter-select {
+    padding: 8px;
+    border-radius: 24px;
+    border: 1px black solid;
+    font-size: 18px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+}
+
+.price-container > .task-name-input {
+    width: auto;
+}
+.advertisement-list, .advertisement-list-item.container {
+    width: 100%;
+}
+
+.advertisement-list > .advertisement-list-item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.advertisement-list-item > a {
+    width: 90%;
+    display: flex;
+}
+
+.advertisement-list-item > a > * {
+    width: 50%;
+}
+
+.item-descr {
+    align-self: center;
 }
