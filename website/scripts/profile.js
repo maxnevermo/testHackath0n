@@ -52,7 +52,7 @@ async function asyncpopulateProfile() {
       taskElement.innerHTML = `
       <h3>${taskRes.name}</h3>
       <p>${taskRes.price}</p>
-      <p>Categories: ${taskRes.category.join(", ")}</p>
+      <p>Categories: ${taskRes.category.join("\t")}</p>
       <p>${taskRes.deadline}</p>
       <p>${
         performer != null
@@ -65,7 +65,6 @@ async function asyncpopulateProfile() {
 
       const viewTaskButton = taskElement.querySelector(".task-btn");
       viewTaskButton.addEventListener("click", function () {
-        console.log("HOOOOOOOOOOO");
         const taskElement = this.closest(".task");
         const taskId = taskElement.dataset.setTaskId;
         sessionStorage.setItem("curTask", taskId);

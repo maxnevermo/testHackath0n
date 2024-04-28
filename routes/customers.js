@@ -3,9 +3,9 @@ const router = express.Router();
 const Customer = require("../models/customer");
 const Task = require("../models/task");
 
-const Chatroom = require('../models/chatroom.js')
-const addUserToChatroom = require('../controllers/chat-room-controllers.js').addUserToChatroom
-
+const Chatroom = require("../models/chatroom.js");
+const addUserToChatroom =
+  require("../controllers/chat-room-controllers.js").addUserToChatroom;
 
 router.get("/", async (req, res) => {
   try {
@@ -58,12 +58,12 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const { tasks, ...customerData } = req.body;
-
     const customer = await Customer.findById(req.params.id);
     if (!customer) {
       return res.status(404).json({ error: "Customer not found" });
     }
 
+    console.log(customer);
     for (const [key, value] of Object.entries(customerData)) {
       if (customer[key] !== undefined) {
         customer[key] = value;
@@ -82,7 +82,6 @@ router.put("/:id", async (req, res) => {
           location: taskData.location || "",
           customer: customer._id,
         });
-
         try {
           const savedTask = await newTask.save();
           customer.tasks.push(savedTask._id);
