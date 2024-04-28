@@ -128,7 +128,7 @@ input[type="button"] {
 .sec-rec {
   width: 50%;
   height: 20px;
-  border-radius: 25;
+  border-radius: 25px;
   border: 2px solid #748efe;
   border: none;
 }
