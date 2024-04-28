@@ -121,3 +121,51 @@ function previewPhoto(event) {
 
     reader.readAsDataURL(input.files[0]);
 }
+
+
+
+function Publish() {
+    var Name = document.getElementById('input-name').value;
+    var Category = document.getElementById('select-category').value;
+    var Price = document.getElementById('input-price').value;
+    var Description = document.getElementById('textarea-description').value;
+    if (document.getElementById('radiobutton-online').checked) {
+        var Format = "online";
+    }
+    else {
+        var Format = "offline";
+    }
+
+    var ContactPerson = document.getElementById('input-contact-person').value;
+    var Email = document.getElementById('input-email').value;
+    var PhoneNumber = document.getElementById('input-phone-number').value;
+
+    console.log(Name, Category, Price, Description, Format, ContactPerson, Email, PhoneNumber);
+}
+
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+
+
+function countCharacters() {
+    var textarea = document.getElementById('textarea-description');
+    var charCount = document.getElementById('char-count');
+    var maxLength = 9000;
+
+    var currentLength = textarea.value.length;
+    charCount.textContent = "Кількість символів: " + currentLength + "/" + maxLength;
+
+    // Якщо кількість символів перевищує максимальне значення, обмежуємо текст
+    if (currentLength > maxLength) {
+        textarea.value = textarea.value.substring(0, maxLength);
+        charCount.textContent = "Кількість символів: " + maxLength + "/" + maxLength;
+    }
+}
+
+
+

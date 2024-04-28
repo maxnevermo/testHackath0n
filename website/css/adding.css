@@ -23,12 +23,12 @@
     margin-bottom: 10px;
 }
 
-.div-description>input[type="text"] {
+/* .div-description>input[type="text"] {
     height: 250px;
     width: 500px;
-    overflow-wrap: break-word;
+    word-break: break-word;
     font-size: 20px;
-}
+} */
 
 /* .div-description>input[type="text"]::placeholder {
     text-align: left;
@@ -43,4 +43,11 @@
     /* Змініть значення за потреби */
     z-index: 1;
     /* Задаємо висоту шару */
+}
+
+
+.div-description>textarea {
+    height: 200px;
+    width: 500px;
+    resize: none;
 }
