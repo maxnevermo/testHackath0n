@@ -1,0 +1,59 @@
+/* #photoContainer {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+}
+
+#photoInput {
+    display: none;
+} */
+
+.photoContainer {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    vertical-align: top;
+    /* Додаємо цей стиль для вирівнювання вертикально зверху */
+}
+
+.div-row-photos {
+    margin-bottom: 10px;
+}
+
+/* .div-description>input[type="text"] {
+    height: 250px;
+    width: 500px;
+    word-break: break-word;
+    font-size: 20px;
+} */
+
+/* .div-description>input[type="text"]::placeholder {
+    text-align: left;
+    padding-left: 10px;
+}  */
+
+.deleteButton {
+    position: absolute;
+    top: 5px;
+    /* Змініть значення за потреби */
+    right: 5px;
+    /* Змініть значення за потреби */
+    z-index: 1;
+    /* Задаємо висоту шару */
+}
+
+
+.div-description>textarea {
+    height: 200px;
+    width: 500px;
+    resize: none;
+}
+
+#select-regions {
+    opacity: 0;
+    pointer-events: none;
+
+}
